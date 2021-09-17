@@ -381,44 +381,56 @@ namespace StarMeatsPos
                 {
                     {
 
-
-                        //calculate and display change
-                        amountpaid = Convert.ToDecimal(Interaction.InputBox("Amount Due " + String.Format("{0:C}", Total) + " | Enter paid amount:"));
-                        if (amountpaid < Total)
+                        try
                         {
-                            MessageBox.Show("Invalid. Please enter amount greater than " + String.Format("{0:C}", Total));
-                            return;
+                            //calculate and display change
+                            amountpaid = Convert.ToDecimal(Interaction.InputBox("Amount Due " + String.Format("{0:C}", Total) + " | Enter paid amount:"));
+                            if (amountpaid < Total)
+                            {
+                                MessageBox.Show("Invalid. Please enter amount greater than " + String.Format("{0:C}", Total));
+                                return;
+                            }
+                            change = amountpaid - Total;
+                            MessageBox.Show("Change: " + String.Format("{0:C}", change));
+
+                            //post to payment
+                            paymentTableAdapter1.Insert(saleid, "Cash");
+
+                            //confirmation message
+                            MessageBox.Show("Payment Sucessful");
+
+
+
+                            //update sale total on sale table
+                            this.saleTableAdapter.UpdateTotal(Total, saleid, saleid);
+                            this.saleTableAdapter.FillBy1(this.starMeatsDataSet.Sale, dt);
+
+
+                            //EDIT3
+                            receiptButton.Visible = true;
+                            AddToOrderButton.Visible = false;
+                            button1.Visible = false;
+                            /* if (poGridView.Visible)
+                             {
+                                 // this.orderTableAdapter1.UpdateQuery(true, false, o_ID, o_ID);
+
+                             }*/
+
+
+
                         }
-                        change = amountpaid - Total;
-                        MessageBox.Show("Change: " + String.Format("{0:C}", change));
 
-                        //post to payment
-                        paymentTableAdapter1.Insert(saleid, "Cash");
-
-                        //confirmation message
-                        MessageBox.Show("Payment Sucessful");
-
-
-
-                        //update sale total on sale table
-                        this.saleTableAdapter.UpdateTotal(Total, saleid, saleid);
-                        this.saleTableAdapter.FillBy1(this.starMeatsDataSet.Sale, dt);
-
-
-                        //EDIT3
-                        receiptButton.Visible = true;
-                        AddToOrderButton.Visible = false;
-                        button1.Visible = false;
-                        /* if (poGridView.Visible)
-                         {
-                             // this.orderTableAdapter1.UpdateQuery(true, false, o_ID, o_ID);
-
-                         }*/
-
-
-
+                        catch
+                        {
+                            DataGridViewRow r7 = this.saleGridView.CurrentRow;
+                            saleProductTableAdapter.DeleteQuery((int)r7.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                            saleTableAdapter.DeleteQuery((int)r7.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                            MessageBox.Show("Sale successfully cancelled.");
+                            this.saleTableAdapter.FillBy(this.starMeatsDataSet.Sale, 0);
+                            this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
+                            MessageBox.Show("Sale cancelled.");
+                        }
                     }
-
 
 
 
