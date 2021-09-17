@@ -93,10 +93,10 @@ namespace StarMeatsPos
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.saleTableAdapter = new StarMeatsPos.StarMeatsDataSetTableAdapters.SaleTableAdapter();
             this.customerTableAdapter1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.CustomerTableAdapter();
             this.paymentTableAdapter1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.PaymentTableAdapter();
-            this.CancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
@@ -176,6 +176,7 @@ namespace StarMeatsPos
             this.textBoxPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPrice.Location = new System.Drawing.Point(602, 170);
             this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(164, 26);
             this.textBoxPrice.TabIndex = 7;
             // 
@@ -184,6 +185,7 @@ namespace StarMeatsPos
             this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxName.Location = new System.Drawing.Point(602, 122);
             this.textBoxName.Name = "textBoxName";
+            this.textBoxName.ReadOnly = true;
             this.textBoxName.Size = new System.Drawing.Size(164, 26);
             this.textBoxName.TabIndex = 8;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -411,6 +413,7 @@ namespace StarMeatsPos
             this.textboxTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textboxTotal.Location = new System.Drawing.Point(602, 264);
             this.textboxTotal.Name = "textboxTotal";
+            this.textboxTotal.ReadOnly = true;
             this.textboxTotal.Size = new System.Drawing.Size(164, 26);
             this.textboxTotal.TabIndex = 17;
             // 
@@ -430,6 +433,7 @@ namespace StarMeatsPos
             this.textboxsubtotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textboxsubtotal.Location = new System.Drawing.Point(602, 216);
             this.textboxsubtotal.Name = "textboxsubtotal";
+            this.textboxsubtotal.ReadOnly = true;
             this.textboxsubtotal.Size = new System.Drawing.Size(164, 26);
             this.textboxsubtotal.TabIndex = 19;
             // 
@@ -680,6 +684,17 @@ namespace StarMeatsPos
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "COMPLETE SALE TRANSACTION: ";
             // 
+            // CancelButton
+            // 
+            this.CancelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CancelButton.Location = new System.Drawing.Point(628, 22);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(130, 45);
+            this.CancelButton.TabIndex = 26;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.button2_Click);
+            // 
             // saleTableAdapter
             // 
             this.saleTableAdapter.ClearBeforeFill = true;
@@ -691,17 +706,6 @@ namespace StarMeatsPos
             // paymentTableAdapter1
             // 
             this.paymentTableAdapter1.ClearBeforeFill = true;
-            // 
-            // CancelButton
-            // 
-            this.CancelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CancelButton.Location = new System.Drawing.Point(628, 22);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(130, 45);
-            this.CancelButton.TabIndex = 26;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // ProcessSale
             // 
