@@ -242,6 +242,13 @@ namespace StarMeatsPos
         private void AddToOrderButton_Click(object sender, EventArgs e)
         {
             {
+                if (textBoxID.Text == "")
+                {
+                    MessageBox.Show("Select product to add to sale.");
+                    textBoxQuantity.Text = "";
+                    return;
+                }
+
                 string t = "";
                 DataGridViewRow r2 = this.saleGridView.CurrentRow;
                 saleid = Convert.ToInt32(r2.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
