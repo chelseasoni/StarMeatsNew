@@ -33,13 +33,13 @@ namespace StarMeatsPos
 
         {
             InitializeComponent();
-         
-    //        try
-      //      {
-        //        this.saleTableAdapter.DeleteEmptySales();
-          //  }
+
+            //        try
+            //      {
+            //        this.saleTableAdapter.DeleteEmptySales();
+            //  }
             //catch
-          //  {
+            //  {
             //    MessageBox.Show("A previous sale may not have been entered in correctly. Please contact IT technican");
             //}
             int employeeID = Login.EmployeeID;
@@ -56,6 +56,14 @@ namespace StarMeatsPos
 
             //create new order
 
+
+            if (custid.ToUpper() == "NEW")
+            {
+                Form redirect = new Customers();
+                redirect.Show();
+
+
+            }
 
 
             //if there is a customer associated 
@@ -120,7 +128,7 @@ namespace StarMeatsPos
             this.productTableAdapter.Fill(this.group3DataSet.Product);
             textBoxID.Focus();
 
-       
+
 
 
 
@@ -341,7 +349,7 @@ namespace StarMeatsPos
                 }
                 catch
                 {
-                    t = descrip.Substring(0, 8) + " ("+d_quantity.ToString() +"@"+textBoxPrice.Text.ToString()+")  " + String.Format("{0:C}", subtotal);
+                    t = descrip.Substring(0, 8) + " (" + d_quantity.ToString() + "@" + textBoxPrice.Text.ToString() + ")  " + String.Format("{0:C}", subtotal);
                     recieptarray[counter] = t;
                     counter = counter + 1;
                 }
@@ -401,11 +409,11 @@ namespace StarMeatsPos
                         receiptButton.Visible = true;
                         AddToOrderButton.Visible = false;
                         button1.Visible = false;
-                       /* if (poGridView.Visible)
-                        {
-                            // this.orderTableAdapter1.UpdateQuery(true, false, o_ID, o_ID);
+                        /* if (poGridView.Visible)
+                         {
+                             // this.orderTableAdapter1.UpdateQuery(true, false, o_ID, o_ID);
 
-                        }*/
+                         }*/
 
 
 
@@ -543,17 +551,17 @@ namespace StarMeatsPos
          }*/
 
         private void buttonRemoveFromSale_Click(object sender, EventArgs e)
-        
-            {
-               
-            
+
+        {
+
+
         }
 
         private void SaleProductGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           
 
-            
+
+
         }
 
         private void SaleProductGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -756,7 +764,25 @@ namespace StarMeatsPos
             {
 
                 buttonProcessSale.Visible = true;
+                CancelButton.Visible = false;
+
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow r5 = this.saleGridView.CurrentRow;
+            saleProductTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+            saleTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+            MessageBox.Show("Sale successfully cancelled.");
+            this.saleTableAdapter.FillBy(this.starMeatsDataSet.Sale, 0);
+            this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void receiptrichTextBox_TextChanged(object sender, EventArgs e)

@@ -9985,7 +9985,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM d" +
@@ -9997,45 +9997,50 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total\r\nFROM " +
-                "    Sale\r\nWHERE  (Sale_Id LIKE @saleid)";
+            this._commandCollection[2].CommandText = "DELETE FROM Sale\r\nWHERE  (Sale_Id = @Original_Sale_Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saleid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Sale_Id, Sale_Date, Sale_Time, Sale_Total, Employee_Id, Customer_Id\r\nFROM " +
-                "    Sale\r\nWHERE  (Sale_Date = @saledate)";
+            this._commandCollection[3].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total\r\nFROM " +
+                "    Sale\r\nWHERE  (Sale_Id LIKE @saleid)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saledate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saleid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total\r\nFROM " +
-                "    Sale\r\nWHERE  (Sale_Date = @saledate) AND (Sale_Time = @saletime)";
+            this._commandCollection[4].CommandText = "SELECT Sale_Id, Sale_Date, Sale_Time, Sale_Total, Employee_Id, Customer_Id\r\nFROM " +
+                "    Sale\r\nWHERE  (Sale_Date = @saledate)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saledate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saletime", global::System.Data.SqlDbType.Time, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total\r\nFROM " +
-                "    Sale\r\nWHERE  (Sale_Total = 0) AND (Sale_Date = @saledate)";
+                "    Sale\r\nWHERE  (Sale_Date = @saledate) AND (Sale_Time = @saletime)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saledate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saletime", global::System.Data.SqlDbType.Time, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE Sale\r\nSET          Total = @Sale_Total\r\nWHERE  (Sale_Id = @Original_Sale_I" +
-                "d);  \r\n";
+            this._commandCollection[6].CommandText = "SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total\r\nFROM " +
+                "    Sale\r\nWHERE  (Sale_Total = 0) AND (Sale_Date = @saledate)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Total", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saledate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE Sale\r\nSET          Sale_Total = @Sale_Total\r\nWHERE  (Sale_Id = @Original_S" +
+            this._commandCollection[7].CommandText = "UPDATE Sale\r\nSET          Total = @Sale_Total\r\nWHERE  (Sale_Id = @Original_Sale_I" +
+                "d);  \r\n";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Total", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE Sale\r\nSET          Sale_Total = @Sale_Total\r\nWHERE  (Sale_Id = @Original_S" +
                 "ale_Id); \r\nSELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_" +
                 "Total FROM Sale WHERE (Sale_Id = @Sale_Id)";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Total", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Total", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sale_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sale_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10067,7 +10072,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(StarMeatsDataSet.SaleDataTable dataTable, int saleid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(saleid));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10081,7 +10086,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual StarMeatsDataSet.SaleDataTable GetDataBy1(int saleid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(saleid));
             StarMeatsDataSet.SaleDataTable dataTable = new StarMeatsDataSet.SaleDataTable();
             this.Adapter.Fill(dataTable);
@@ -10093,7 +10098,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy1(StarMeatsDataSet.SaleDataTable dataTable, System.DateTime saledate) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(saledate));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10107,7 +10112,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy2(StarMeatsDataSet.SaleDataTable dataTable, System.DateTime saledate, string saletime) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(saledate));
             if ((saletime == null)) {
                 throw new global::System.ArgumentNullException("saletime");
@@ -10127,7 +10132,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual StarMeatsDataSet.SaleDataTable GetDataBy4(System.DateTime saledate, string saletime) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(saledate));
             if ((saletime == null)) {
                 throw new global::System.ArgumentNullException("saletime");
@@ -10145,7 +10150,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy4(StarMeatsDataSet.SaleDataTable dataTable, System.DateTime saledate) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(saledate));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10159,7 +10164,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual StarMeatsDataSet.SaleDataTable GetDataBy6(System.DateTime saledate) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(saledate));
             StarMeatsDataSet.SaleDataTable dataTable = new StarMeatsDataSet.SaleDataTable();
             this.Adapter.Fill(dataTable);
@@ -10339,9 +10344,33 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int Original_Sale_Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(Original_Sale_Id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(object Sale_Total, int Original_Sale_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((Sale_Total == null)) {
                 throw new global::System.ArgumentNullException("Sale_Total");
             }
@@ -10371,7 +10400,7 @@ SELECT Sale_Id, Employee_Id, Customer_Id, Sale_Date, Sale_Time, Sale_Total FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateTotal(decimal Sale_Total, int Original_Sale_Id, int Sale_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((decimal)(Sale_Total));
             command.Parameters[1].Value = ((int)(Original_Sale_Id));
             command.Parameters[2].Value = ((int)(Sale_Id));
