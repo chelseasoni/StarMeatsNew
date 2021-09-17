@@ -458,7 +458,16 @@ namespace StarMeatsPos
                 }
             }
 
-
+            if (result1 == DialogResult.Cancel)
+            {
+                DataGridViewRow r5 = this.saleGridView.CurrentRow;
+                saleProductTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                saleTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                MessageBox.Show("Sale successfully cancelled.");
+                this.saleTableAdapter.FillBy(this.starMeatsDataSet.Sale, 0);
+                this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
+                MessageBox.Show("Sale cancelled.");
+            }
 
         }
 
