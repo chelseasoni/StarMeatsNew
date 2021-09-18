@@ -29,21 +29,22 @@ namespace StarMeatsPos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Login ");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Processing a Sale");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Processing an Order");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Creating an Order");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Adding a new Product");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Updating a Product");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Viewing Sales");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Viewing Orders");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Viewing Products");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Generating a Report");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Login ");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Processing a Sale");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Processing an Order");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Creating an Order");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Adding a new Product");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Removing a Product");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Updating a Product");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Viewing Sales");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Viewing Orders");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Viewing Products");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Generating a Report");
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -90,6 +91,15 @@ namespace StarMeatsPos
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "System Information";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1066, 563);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
@@ -100,15 +110,6 @@ namespace StarMeatsPos
             this.tabPage2.Size = new System.Drawing.Size(1072, 569);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Help";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1066, 563);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // splitContainer1
             // 
@@ -133,47 +134,50 @@ namespace StarMeatsPos
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode21.Name = "Node0";
-            treeNode21.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode21.Text = "Login ";
-            treeNode22.Name = "Node1";
-            treeNode22.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode22.Text = "Processing a Sale";
-            treeNode23.Name = "Node2";
-            treeNode23.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode23.Text = "Processing an Order";
-            treeNode24.Name = "Node3";
-            treeNode24.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode24.Text = "Creating an Order";
-            treeNode25.Name = "Node4";
-            treeNode25.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode25.Text = "Adding a new Product";
-            treeNode26.Name = "Node5";
-            treeNode26.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode26.Text = "Updating a Product";
-            treeNode27.Name = "Node6";
-            treeNode27.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode27.Text = "Viewing Sales";
-            treeNode28.Name = "Node7";
-            treeNode28.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode28.Text = "Viewing Orders";
-            treeNode29.Name = "Node8";
-            treeNode29.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode29.Text = "Viewing Products";
-            treeNode30.Name = "Node9";
-            treeNode30.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode30.Text = "Generating a Report";
+            treeNode1.Name = "Node0";
+            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "Login ";
+            treeNode2.Name = "Node1";
+            treeNode2.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode2.Text = "Processing a Sale";
+            treeNode3.Name = "Node2";
+            treeNode3.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode3.Text = "Processing an Order";
+            treeNode4.Name = "Node3";
+            treeNode4.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode4.Text = "Creating an Order";
+            treeNode5.Name = "Node4";
+            treeNode5.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode5.Text = "Adding a new Product";
+            treeNode6.Name = "Node10";
+            treeNode6.Text = "Removing a Product";
+            treeNode7.Name = "Node5";
+            treeNode7.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode7.Text = "Updating a Product";
+            treeNode8.Name = "Node6";
+            treeNode8.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode8.Text = "Viewing Sales";
+            treeNode9.Name = "Node7";
+            treeNode9.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode9.Text = "Viewing Orders";
+            treeNode10.Name = "Node8";
+            treeNode10.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode10.Text = "Viewing Products";
+            treeNode11.Name = "Node9";
+            treeNode11.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode11.Text = "Generating a Report";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22,
-            treeNode23,
-            treeNode24,
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29,
-            treeNode30});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11});
             this.treeView1.Size = new System.Drawing.Size(349, 557);
             this.treeView1.TabIndex = 5;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -196,7 +200,7 @@ namespace StarMeatsPos
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Help2";
             this.Text = "Help2";
             this.Load += new System.EventHandler(this.Help2_Load);

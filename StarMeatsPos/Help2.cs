@@ -93,21 +93,28 @@ namespace StarMeatsPos
             }
             if (e.Node.Name == "Node6")
             {
-                richTextBox2.Text = "Viewing sales";
-                richTextBox2.Text = "1.  Navigate to “Products” " + Environment.NewLine + "2. Using the search tools on the left hand side of the screen" + Environment.NewLine + "2.1 Search by ID by entering the ID number of the product and click “Search.” " + Environment.NewLine + "2.2 Search by product description by entering part/s of the product description.";
+                richTextBox2.Text = "Viewing sales" ;
+                richTextBox2.Text = "1. Navigate to “Sales” on the left-hand side panel" + Environment.NewLine+ "2. Select “View Sales” " + Environment.NewLine + "3. All sales will be displayed" + Environment.NewLine + "4. A specific sale can be viewed" + Environment.NewLine + "4.1 Enter the sale ID the in the provided field on the left-hand side" + Environment.NewLine + "4.2 Click the “Search button”";
             }
             if (e.Node.Name == "Node7")
             {
                 richTextBox2.Text = "Viewing orders";
+                richTextBox2.Text = "1. Navigate to “Orders” on the left-hand side panel" + Environment.NewLine + "2. Select “View Orders”" + Environment.NewLine + "3. All orders will be displayed" + Environment.NewLine + "4. A specific order can be viewed" + Environment.NewLine + "4.1 Enter the order ID the in the provided field on the right-hand side" + Environment.NewLine + "4.2 Click the “Search button”" + Environment.NewLine + "5. Orders can be filtered to show new orders and completed orders" + Environment.NewLine + "5.1 To filter by new orders" + Environment.NewLine + "5.1.1 Click “New Orders” on the left-hand side" + Environment.NewLine + "5.2 To filter by completed orders" + Environment.NewLine + "5.2.1 Click “Completed Orders” on the left-hand side";
             }
             if (e.Node.Name == "Node8")
             {
                 richTextBox2.Text = "Viewing products";
+                richTextBox2.Text = "1. Navigate to “Products” on the left-hand side panel" + Environment.NewLine + "2. Select “View Products”" + Environment.NewLine + "3. All products will be displayed" + Environment.NewLine + "4. A specific product can be viewed" + Environment.NewLine + "4.1 Enter the product ID the in the provided field on the left-hand side" + Environment.NewLine + "4.2 Click the “Search button”" + Environment.NewLine + "5. Products can be filtered to show only products on promotion" + Environment.NewLine + "5.1 On the left-hand side panel select “Products on promotion”";
             }
             if (e.Node.Name == "Node9")
             {
                 richTextBox2.Text = "Generating a report";
             }
+            if (e.Node.Name == "Node10")
+            {
+                richTextBox2.Text = "Removing a Product";
+            }
+
         }
     }
 }
