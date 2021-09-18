@@ -126,7 +126,7 @@ namespace StarMeatsPos
             this.iconButton2.Location = new System.Drawing.Point(0, 1075);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(233, 40);
+            this.iconButton2.Size = new System.Drawing.Size(229, 40);
             this.iconButton2.TabIndex = 15;
             this.iconButton2.Text = "Help";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,7 +148,7 @@ namespace StarMeatsPos
             this.iconButton1.Location = new System.Drawing.Point(0, 1115);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(233, 40);
+            this.iconButton1.Size = new System.Drawing.Size(229, 40);
             this.iconButton1.TabIndex = 14;
             this.iconButton1.Text = "Exit";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +170,7 @@ namespace StarMeatsPos
             this.panelReports.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReports.Location = new System.Drawing.Point(0, 795);
             this.panelReports.Name = "panelReports";
-            this.panelReports.Size = new System.Drawing.Size(233, 280);
+            this.panelReports.Size = new System.Drawing.Size(229, 280);
             this.panelReports.TabIndex = 13;
             // 
             // button8
@@ -182,7 +182,7 @@ namespace StarMeatsPos
             this.button8.Location = new System.Drawing.Point(0, 245);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(233, 35);
+            this.button8.Size = new System.Drawing.Size(229, 35);
             this.button8.TabIndex = 11;
             this.button8.Text = "Orders Reports";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,7 +197,7 @@ namespace StarMeatsPos
             this.button7.Location = new System.Drawing.Point(0, 210);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(233, 35);
+            this.button7.Size = new System.Drawing.Size(229, 35);
             this.button7.TabIndex = 10;
             this.button7.Text = "Orders Reports";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,7 +212,7 @@ namespace StarMeatsPos
             this.button6.Location = new System.Drawing.Point(0, 175);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(233, 35);
+            this.button6.Size = new System.Drawing.Size(229, 35);
             this.button6.TabIndex = 9;
             this.button6.Text = "Orders Reports";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,11 +227,12 @@ namespace StarMeatsPos
             this.button5.Location = new System.Drawing.Point(0, 140);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(233, 35);
+            this.button5.Size = new System.Drawing.Size(229, 35);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Orders Reports";
+            this.button5.Text = "Employee Performance Reports";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -242,7 +243,7 @@ namespace StarMeatsPos
             this.button3.Location = new System.Drawing.Point(0, 105);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(233, 35);
+            this.button3.Size = new System.Drawing.Size(229, 35);
             this.button3.TabIndex = 7;
             this.button3.Text = "Orders Reports";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,7 +258,7 @@ namespace StarMeatsPos
             this.button2.Location = new System.Drawing.Point(0, 70);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(233, 35);
+            this.button2.Size = new System.Drawing.Size(229, 35);
             this.button2.TabIndex = 6;
             this.button2.Text = "Product Reports";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,7 +274,7 @@ namespace StarMeatsPos
             this.buttonOrdersReports.Location = new System.Drawing.Point(0, 35);
             this.buttonOrdersReports.Name = "buttonOrdersReports";
             this.buttonOrdersReports.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonOrdersReports.Size = new System.Drawing.Size(233, 35);
+            this.buttonOrdersReports.Size = new System.Drawing.Size(229, 35);
             this.buttonOrdersReports.TabIndex = 5;
             this.buttonOrdersReports.Text = "Orders Reports";
             this.buttonOrdersReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,7 +290,7 @@ namespace StarMeatsPos
             this.buttonSalesReports.Location = new System.Drawing.Point(0, 0);
             this.buttonSalesReports.Name = "buttonSalesReports";
             this.buttonSalesReports.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonSalesReports.Size = new System.Drawing.Size(233, 35);
+            this.buttonSalesReports.Size = new System.Drawing.Size(229, 35);
             this.buttonSalesReports.TabIndex = 4;
             this.buttonSalesReports.Text = "Sales Reports";
             this.buttonSalesReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,7 +311,7 @@ namespace StarMeatsPos
             this.iconButtonReports.Location = new System.Drawing.Point(0, 755);
             this.iconButtonReports.Name = "iconButtonReports";
             this.iconButtonReports.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonReports.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonReports.Size = new System.Drawing.Size(229, 40);
             this.iconButtonReports.TabIndex = 12;
             this.iconButtonReports.Text = "Reports";
             this.iconButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,7 +328,7 @@ namespace StarMeatsPos
             this.panelCustomers.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCustomers.Location = new System.Drawing.Point(0, 650);
             this.panelCustomers.Name = "panelCustomers";
-            this.panelCustomers.Size = new System.Drawing.Size(233, 105);
+            this.panelCustomers.Size = new System.Drawing.Size(229, 105);
             this.panelCustomers.TabIndex = 11;
             this.panelCustomers.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCustomers_Paint);
             // 
@@ -340,7 +341,7 @@ namespace StarMeatsPos
             this.buttonAddCustomer.Location = new System.Drawing.Point(0, 70);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
             this.buttonAddCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonAddCustomer.Size = new System.Drawing.Size(233, 35);
+            this.buttonAddCustomer.Size = new System.Drawing.Size(229, 35);
             this.buttonAddCustomer.TabIndex = 5;
             this.buttonAddCustomer.Text = "Add New Customer";
             this.buttonAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -356,7 +357,7 @@ namespace StarMeatsPos
             this.buttonViewCustomers.Location = new System.Drawing.Point(0, 35);
             this.buttonViewCustomers.Name = "buttonViewCustomers";
             this.buttonViewCustomers.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonViewCustomers.Size = new System.Drawing.Size(233, 35);
+            this.buttonViewCustomers.Size = new System.Drawing.Size(229, 35);
             this.buttonViewCustomers.TabIndex = 4;
             this.buttonViewCustomers.Text = "View Customers";
             this.buttonViewCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -372,7 +373,7 @@ namespace StarMeatsPos
             this.buttonManageCustomers.Location = new System.Drawing.Point(0, 0);
             this.buttonManageCustomers.Name = "buttonManageCustomers";
             this.buttonManageCustomers.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonManageCustomers.Size = new System.Drawing.Size(233, 35);
+            this.buttonManageCustomers.Size = new System.Drawing.Size(229, 35);
             this.buttonManageCustomers.TabIndex = 3;
             this.buttonManageCustomers.Text = "Manage Customers";
             this.buttonManageCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -393,7 +394,7 @@ namespace StarMeatsPos
             this.iconButtonCustomers.Location = new System.Drawing.Point(0, 610);
             this.iconButtonCustomers.Name = "iconButtonCustomers";
             this.iconButtonCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonCustomers.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonCustomers.Size = new System.Drawing.Size(229, 40);
             this.iconButtonCustomers.TabIndex = 10;
             this.iconButtonCustomers.Text = "Customers";
             this.iconButtonCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -409,7 +410,7 @@ namespace StarMeatsPos
             this.panelStaff.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelStaff.Location = new System.Drawing.Point(0, 540);
             this.panelStaff.Name = "panelStaff";
-            this.panelStaff.Size = new System.Drawing.Size(233, 70);
+            this.panelStaff.Size = new System.Drawing.Size(229, 70);
             this.panelStaff.TabIndex = 9;
             this.panelStaff.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStaff_Paint);
             // 
@@ -423,7 +424,7 @@ namespace StarMeatsPos
             this.button4.Location = new System.Drawing.Point(0, 35);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(233, 35);
+            this.button4.Size = new System.Drawing.Size(229, 35);
             this.button4.TabIndex = 2;
             this.button4.Text = "Employee";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -439,7 +440,7 @@ namespace StarMeatsPos
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(233, 35);
+            this.button1.Size = new System.Drawing.Size(229, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Manage Staff";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -460,7 +461,7 @@ namespace StarMeatsPos
             this.iconButtonStaff.Location = new System.Drawing.Point(0, 500);
             this.iconButtonStaff.Name = "iconButtonStaff";
             this.iconButtonStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonStaff.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonStaff.Size = new System.Drawing.Size(229, 40);
             this.iconButtonStaff.TabIndex = 8;
             this.iconButtonStaff.Text = "Staff";
             this.iconButtonStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -476,7 +477,7 @@ namespace StarMeatsPos
             this.panelProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProducts.Location = new System.Drawing.Point(0, 430);
             this.panelProducts.Name = "panelProducts";
-            this.panelProducts.Size = new System.Drawing.Size(233, 70);
+            this.panelProducts.Size = new System.Drawing.Size(229, 70);
             this.panelProducts.TabIndex = 7;
             // 
             // buttonViewProducts
@@ -488,7 +489,7 @@ namespace StarMeatsPos
             this.buttonViewProducts.Location = new System.Drawing.Point(0, 35);
             this.buttonViewProducts.Name = "buttonViewProducts";
             this.buttonViewProducts.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonViewProducts.Size = new System.Drawing.Size(233, 35);
+            this.buttonViewProducts.Size = new System.Drawing.Size(229, 35);
             this.buttonViewProducts.TabIndex = 2;
             this.buttonViewProducts.Text = "View Products";
             this.buttonViewProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -504,7 +505,7 @@ namespace StarMeatsPos
             this.buttonManageProducts.Location = new System.Drawing.Point(0, 0);
             this.buttonManageProducts.Name = "buttonManageProducts";
             this.buttonManageProducts.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonManageProducts.Size = new System.Drawing.Size(233, 35);
+            this.buttonManageProducts.Size = new System.Drawing.Size(229, 35);
             this.buttonManageProducts.TabIndex = 1;
             this.buttonManageProducts.Text = "Manage Products";
             this.buttonManageProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -525,7 +526,7 @@ namespace StarMeatsPos
             this.iconButtonProducts.Location = new System.Drawing.Point(0, 390);
             this.iconButtonProducts.Name = "iconButtonProducts";
             this.iconButtonProducts.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonProducts.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonProducts.Size = new System.Drawing.Size(229, 40);
             this.iconButtonProducts.TabIndex = 6;
             this.iconButtonProducts.Text = "Products";
             this.iconButtonProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -541,7 +542,7 @@ namespace StarMeatsPos
             this.panelOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOrders.Location = new System.Drawing.Point(0, 320);
             this.panelOrders.Name = "panelOrders";
-            this.panelOrders.Size = new System.Drawing.Size(233, 70);
+            this.panelOrders.Size = new System.Drawing.Size(229, 70);
             this.panelOrders.TabIndex = 5;
             // 
             // buttonViewOrders
@@ -553,7 +554,7 @@ namespace StarMeatsPos
             this.buttonViewOrders.Location = new System.Drawing.Point(0, 35);
             this.buttonViewOrders.Name = "buttonViewOrders";
             this.buttonViewOrders.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonViewOrders.Size = new System.Drawing.Size(233, 35);
+            this.buttonViewOrders.Size = new System.Drawing.Size(229, 35);
             this.buttonViewOrders.TabIndex = 4;
             this.buttonViewOrders.Text = "View Orders";
             this.buttonViewOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -569,7 +570,7 @@ namespace StarMeatsPos
             this.buttonProcessOrders.Location = new System.Drawing.Point(0, 0);
             this.buttonProcessOrders.Name = "buttonProcessOrders";
             this.buttonProcessOrders.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonProcessOrders.Size = new System.Drawing.Size(233, 35);
+            this.buttonProcessOrders.Size = new System.Drawing.Size(229, 35);
             this.buttonProcessOrders.TabIndex = 2;
             this.buttonProcessOrders.Text = "Create Order";
             this.buttonProcessOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -590,7 +591,7 @@ namespace StarMeatsPos
             this.iconButtonOrders.Location = new System.Drawing.Point(0, 280);
             this.iconButtonOrders.Name = "iconButtonOrders";
             this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonOrders.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonOrders.Size = new System.Drawing.Size(229, 40);
             this.iconButtonOrders.TabIndex = 4;
             this.iconButtonOrders.Text = "Orders";
             this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -607,7 +608,7 @@ namespace StarMeatsPos
             this.panelSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSales.Location = new System.Drawing.Point(0, 175);
             this.panelSales.Name = "panelSales";
-            this.panelSales.Size = new System.Drawing.Size(233, 105);
+            this.panelSales.Size = new System.Drawing.Size(229, 105);
             this.panelSales.TabIndex = 3;
             this.panelSales.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -620,7 +621,7 @@ namespace StarMeatsPos
             this.btnViewSales.Location = new System.Drawing.Point(0, 70);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnViewSales.Size = new System.Drawing.Size(233, 35);
+            this.btnViewSales.Size = new System.Drawing.Size(229, 35);
             this.btnViewSales.TabIndex = 3;
             this.btnViewSales.Text = "View Sales";
             this.btnViewSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,7 +637,7 @@ namespace StarMeatsPos
             this.btnProcessOrder.Location = new System.Drawing.Point(0, 35);
             this.btnProcessOrder.Name = "btnProcessOrder";
             this.btnProcessOrder.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProcessOrder.Size = new System.Drawing.Size(233, 35);
+            this.btnProcessOrder.Size = new System.Drawing.Size(229, 35);
             this.btnProcessOrder.TabIndex = 2;
             this.btnProcessOrder.Text = "Process Order";
             this.btnProcessOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -652,7 +653,7 @@ namespace StarMeatsPos
             this.btnProcessSales.Location = new System.Drawing.Point(0, 0);
             this.btnProcessSales.Name = "btnProcessSales";
             this.btnProcessSales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProcessSales.Size = new System.Drawing.Size(233, 35);
+            this.btnProcessSales.Size = new System.Drawing.Size(229, 35);
             this.btnProcessSales.TabIndex = 1;
             this.btnProcessSales.Text = "Process Sale";
             this.btnProcessSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -673,7 +674,7 @@ namespace StarMeatsPos
             this.iconButtonSales.Location = new System.Drawing.Point(0, 135);
             this.iconButtonSales.Name = "iconButtonSales";
             this.iconButtonSales.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonSales.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonSales.Size = new System.Drawing.Size(229, 40);
             this.iconButtonSales.TabIndex = 2;
             this.iconButtonSales.Text = "Sales";
             this.iconButtonSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -695,7 +696,7 @@ namespace StarMeatsPos
             this.iconButtonAccessControl.Location = new System.Drawing.Point(0, 95);
             this.iconButtonAccessControl.Name = "iconButtonAccessControl";
             this.iconButtonAccessControl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonAccessControl.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonAccessControl.Size = new System.Drawing.Size(229, 40);
             this.iconButtonAccessControl.TabIndex = 1;
             this.iconButtonAccessControl.Text = "Access Control";
             this.iconButtonAccessControl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -712,7 +713,7 @@ namespace StarMeatsPos
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(233, 95);
+            this.panelLogo.Size = new System.Drawing.Size(229, 95);
             this.panelLogo.TabIndex = 0;
             // 
             // Role
@@ -721,7 +722,7 @@ namespace StarMeatsPos
             this.Role.ForeColor = System.Drawing.Color.Gainsboro;
             this.Role.Location = new System.Drawing.Point(30, 59);
             this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(46, 17);
+            this.Role.Size = new System.Drawing.Size(53, 20);
             this.Role.TabIndex = 2;
             this.Role.Text = "label2";
             this.Role.Visible = false;
@@ -732,7 +733,7 @@ namespace StarMeatsPos
             this.labelUsername.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelUsername.Location = new System.Drawing.Point(30, 23);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(46, 17);
+            this.labelUsername.Size = new System.Drawing.Size(53, 20);
             this.labelUsername.TabIndex = 1;
             this.labelUsername.Text = "label1";
             this.labelUsername.Visible = false;
@@ -743,7 +744,7 @@ namespace StarMeatsPos
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 95);
+            this.pictureBox1.Size = new System.Drawing.Size(229, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -772,7 +773,7 @@ namespace StarMeatsPos
             // 
             // StarMeats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 721);
             this.Controls.Add(this.panelChildForm);

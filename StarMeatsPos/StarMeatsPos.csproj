@@ -72,6 +72,12 @@
       <DependentUpon>CrystalReport4.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EmployeePerformanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeePerformanceReport.Designer.cs">
+      <DependentUpon>EmployeePerformanceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="group3DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="CrystalReport4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePerformanceReport.resx">
+      <DependentUpon>EmployeePerformanceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help2.resx">
       <DependentUpon>Help2.cs</DependentUpon>

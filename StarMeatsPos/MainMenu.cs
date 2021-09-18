@@ -353,5 +353,11 @@ namespace StarMeatsPos
             setText("Product Reports");
             openChildForm(new ProductReporting());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            setText("Employee Performance Reports");
+            openChildForm(new EmployeePerformanceReport());
+        }
     }
 }
