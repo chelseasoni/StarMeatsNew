@@ -31,8 +31,6 @@ namespace StarMeatsPos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StarMeats));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelReports = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -42,37 +40,39 @@ namespace StarMeatsPos
             this.button2 = new System.Windows.Forms.Button();
             this.buttonOrdersReports = new System.Windows.Forms.Button();
             this.buttonSalesReports = new System.Windows.Forms.Button();
-            this.iconButtonReports = new FontAwesome.Sharp.IconButton();
             this.panelCustomers = new System.Windows.Forms.Panel();
             this.buttonAddCustomer = new System.Windows.Forms.Button();
             this.buttonViewCustomers = new System.Windows.Forms.Button();
             this.buttonManageCustomers = new System.Windows.Forms.Button();
-            this.iconButtonCustomers = new FontAwesome.Sharp.IconButton();
             this.panelStaff = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.iconButtonStaff = new FontAwesome.Sharp.IconButton();
             this.panelProducts = new System.Windows.Forms.Panel();
             this.buttonViewProducts = new System.Windows.Forms.Button();
             this.buttonManageProducts = new System.Windows.Forms.Button();
-            this.iconButtonProducts = new FontAwesome.Sharp.IconButton();
             this.panelOrders = new System.Windows.Forms.Panel();
             this.buttonViewOrders = new System.Windows.Forms.Button();
             this.buttonProcessOrders = new System.Windows.Forms.Button();
-            this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
             this.panelSales = new System.Windows.Forms.Panel();
             this.btnViewSales = new System.Windows.Forms.Button();
             this.btnProcessOrder = new System.Windows.Forms.Button();
             this.btnProcessSales = new System.Windows.Forms.Button();
-            this.iconButtonSales = new FontAwesome.Sharp.IconButton();
-            this.iconButtonAccessControl = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Role = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonReports = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCustomers = new FontAwesome.Sharp.IconButton();
+            this.iconButtonStaff = new FontAwesome.Sharp.IconButton();
+            this.iconButtonProducts = new FontAwesome.Sharp.IconButton();
+            this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSales = new FontAwesome.Sharp.IconButton();
+            this.iconButtonAccessControl = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelReports.SuspendLayout();
             this.panelCustomers.SuspendLayout();
@@ -81,9 +81,9 @@ namespace StarMeatsPos
             this.panelOrders.SuspendLayout();
             this.panelSales.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -111,50 +111,6 @@ namespace StarMeatsPos
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 721);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 1075);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(233, 40);
-            this.iconButton2.TabIndex = 15;
-            this.iconButton2.Text = "Help";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 1115);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(233, 40);
-            this.iconButton1.TabIndex = 14;
-            this.iconButton1.Text = "Exit";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panelReports
             // 
@@ -248,6 +204,7 @@ namespace StarMeatsPos
             this.button3.Text = "Orders By Month Reports";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -296,28 +253,6 @@ namespace StarMeatsPos
             this.buttonSalesReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSalesReports.UseVisualStyleBackColor = true;
             this.buttonSalesReports.Click += new System.EventHandler(this.buttonSalesReports_Click);
-            // 
-            // iconButtonReports
-            // 
-            this.iconButtonReports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonReports.FlatAppearance.BorderSize = 0;
-            this.iconButtonReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonReports.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonReports.IconSize = 32;
-            this.iconButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonReports.Location = new System.Drawing.Point(0, 755);
-            this.iconButtonReports.Name = "iconButtonReports";
-            this.iconButtonReports.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonReports.Size = new System.Drawing.Size(233, 40);
-            this.iconButtonReports.TabIndex = 12;
-            this.iconButtonReports.Text = "Reports";
-            this.iconButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonReports.UseVisualStyleBackColor = true;
-            this.iconButtonReports.Click += new System.EventHandler(this.iconButtonReports_Click);
             // 
             // panelCustomers
             // 
@@ -380,28 +315,6 @@ namespace StarMeatsPos
             this.buttonManageCustomers.UseVisualStyleBackColor = true;
             this.buttonManageCustomers.Click += new System.EventHandler(this.buttonManageCustomers_Click);
             // 
-            // iconButtonCustomers
-            // 
-            this.iconButtonCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonCustomers.FlatAppearance.BorderSize = 0;
-            this.iconButtonCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonCustomers.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButtonCustomers.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonCustomers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCustomers.IconSize = 32;
-            this.iconButtonCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCustomers.Location = new System.Drawing.Point(0, 610);
-            this.iconButtonCustomers.Name = "iconButtonCustomers";
-            this.iconButtonCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonCustomers.Size = new System.Drawing.Size(233, 40);
-            this.iconButtonCustomers.TabIndex = 10;
-            this.iconButtonCustomers.Text = "Customers";
-            this.iconButtonCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCustomers.UseVisualStyleBackColor = true;
-            this.iconButtonCustomers.Click += new System.EventHandler(this.iconButtonCustomers_Click);
-            // 
             // panelStaff
             // 
             this.panelStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -447,28 +360,6 @@ namespace StarMeatsPos
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // iconButtonStaff
-            // 
-            this.iconButtonStaff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonStaff.FlatAppearance.BorderSize = 0;
-            this.iconButtonStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonStaff.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.iconButtonStaff.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonStaff.IconSize = 32;
-            this.iconButtonStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonStaff.Location = new System.Drawing.Point(0, 500);
-            this.iconButtonStaff.Name = "iconButtonStaff";
-            this.iconButtonStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonStaff.Size = new System.Drawing.Size(233, 40);
-            this.iconButtonStaff.TabIndex = 8;
-            this.iconButtonStaff.Text = "Staff";
-            this.iconButtonStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonStaff.UseVisualStyleBackColor = true;
-            this.iconButtonStaff.Click += new System.EventHandler(this.iconButtonStaff_Click);
-            // 
             // panelProducts
             // 
             this.panelProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -512,28 +403,6 @@ namespace StarMeatsPos
             this.buttonManageProducts.UseVisualStyleBackColor = true;
             this.buttonManageProducts.Click += new System.EventHandler(this.buttonManageProducts_Click);
             // 
-            // iconButtonProducts
-            // 
-            this.iconButtonProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonProducts.FlatAppearance.BorderSize = 0;
-            this.iconButtonProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonProducts.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
-            this.iconButtonProducts.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonProducts.IconSize = 32;
-            this.iconButtonProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonProducts.Location = new System.Drawing.Point(0, 390);
-            this.iconButtonProducts.Name = "iconButtonProducts";
-            this.iconButtonProducts.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonProducts.Size = new System.Drawing.Size(233, 40);
-            this.iconButtonProducts.TabIndex = 6;
-            this.iconButtonProducts.Text = "Products";
-            this.iconButtonProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonProducts.UseVisualStyleBackColor = true;
-            this.iconButtonProducts.Click += new System.EventHandler(this.iconButtonProducts_Click);
-            // 
             // panelOrders
             // 
             this.panelOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -576,28 +445,6 @@ namespace StarMeatsPos
             this.buttonProcessOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProcessOrders.UseVisualStyleBackColor = true;
             this.buttonProcessOrders.Click += new System.EventHandler(this.buttonManageOrders_Click);
-            // 
-            // iconButtonOrders
-            // 
-            this.iconButtonOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonOrders.FlatAppearance.BorderSize = 0;
-            this.iconButtonOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonOrders.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.iconButtonOrders.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.iconButtonOrders.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonOrders.IconSize = 32;
-            this.iconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOrders.Location = new System.Drawing.Point(0, 280);
-            this.iconButtonOrders.Name = "iconButtonOrders";
-            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButtonOrders.Size = new System.Drawing.Size(233, 40);
-            this.iconButtonOrders.TabIndex = 4;
-            this.iconButtonOrders.Text = "Orders";
-            this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOrders.UseVisualStyleBackColor = true;
-            this.iconButtonOrders.Click += new System.EventHandler(this.iconButtonOrders_Click);
             // 
             // panelSales
             // 
@@ -660,6 +507,216 @@ namespace StarMeatsPos
             this.btnProcessSales.UseVisualStyleBackColor = true;
             this.btnProcessSales.Click += new System.EventHandler(this.btnManageSales_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelLogo.Controls.Add(this.Role);
+            this.panelLogo.Controls.Add(this.labelUsername);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(233, 95);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // Role
+            // 
+            this.Role.AutoSize = true;
+            this.Role.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Role.Location = new System.Drawing.Point(30, 59);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(46, 17);
+            this.Role.TabIndex = 2;
+            this.Role.Text = "label2";
+            this.Role.Visible = false;
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelUsername.Location = new System.Drawing.Point(30, 23);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(46, 17);
+            this.labelUsername.TabIndex = 1;
+            this.labelUsername.Text = "label1";
+            this.labelUsername.Visible = false;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.Controls.Add(this.pictureBox2);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1112, 721);
+            this.panelChildForm.TabIndex = 1;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(298, 172);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(518, 387);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 32;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 1075);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton2.Size = new System.Drawing.Size(233, 40);
+            this.iconButton2.TabIndex = 15;
+            this.iconButton2.Text = "Help";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 1115);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(233, 40);
+            this.iconButton1.TabIndex = 14;
+            this.iconButton1.Text = "Exit";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButtonReports
+            // 
+            this.iconButtonReports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonReports.FlatAppearance.BorderSize = 0;
+            this.iconButtonReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonReports.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButtonReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonReports.IconSize = 32;
+            this.iconButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonReports.Location = new System.Drawing.Point(0, 755);
+            this.iconButtonReports.Name = "iconButtonReports";
+            this.iconButtonReports.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButtonReports.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonReports.TabIndex = 12;
+            this.iconButtonReports.Text = "Reports";
+            this.iconButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonReports.UseVisualStyleBackColor = true;
+            this.iconButtonReports.Click += new System.EventHandler(this.iconButtonReports_Click);
+            // 
+            // iconButtonCustomers
+            // 
+            this.iconButtonCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonCustomers.FlatAppearance.BorderSize = 0;
+            this.iconButtonCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonCustomers.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButtonCustomers.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonCustomers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCustomers.IconSize = 32;
+            this.iconButtonCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCustomers.Location = new System.Drawing.Point(0, 610);
+            this.iconButtonCustomers.Name = "iconButtonCustomers";
+            this.iconButtonCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButtonCustomers.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonCustomers.TabIndex = 10;
+            this.iconButtonCustomers.Text = "Customers";
+            this.iconButtonCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCustomers.UseVisualStyleBackColor = true;
+            this.iconButtonCustomers.Click += new System.EventHandler(this.iconButtonCustomers_Click);
+            // 
+            // iconButtonStaff
+            // 
+            this.iconButtonStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonStaff.FlatAppearance.BorderSize = 0;
+            this.iconButtonStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonStaff.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.iconButtonStaff.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonStaff.IconSize = 32;
+            this.iconButtonStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonStaff.Location = new System.Drawing.Point(0, 500);
+            this.iconButtonStaff.Name = "iconButtonStaff";
+            this.iconButtonStaff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButtonStaff.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonStaff.TabIndex = 8;
+            this.iconButtonStaff.Text = "Staff";
+            this.iconButtonStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonStaff.UseVisualStyleBackColor = true;
+            this.iconButtonStaff.Click += new System.EventHandler(this.iconButtonStaff_Click);
+            // 
+            // iconButtonProducts
+            // 
+            this.iconButtonProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonProducts.FlatAppearance.BorderSize = 0;
+            this.iconButtonProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonProducts.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
+            this.iconButtonProducts.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonProducts.IconSize = 32;
+            this.iconButtonProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProducts.Location = new System.Drawing.Point(0, 390);
+            this.iconButtonProducts.Name = "iconButtonProducts";
+            this.iconButtonProducts.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButtonProducts.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonProducts.TabIndex = 6;
+            this.iconButtonProducts.Text = "Products";
+            this.iconButtonProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonProducts.UseVisualStyleBackColor = true;
+            this.iconButtonProducts.Click += new System.EventHandler(this.iconButtonProducts_Click);
+            // 
+            // iconButtonOrders
+            // 
+            this.iconButtonOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonOrders.FlatAppearance.BorderSize = 0;
+            this.iconButtonOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonOrders.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.iconButtonOrders.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.iconButtonOrders.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonOrders.IconSize = 32;
+            this.iconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.Location = new System.Drawing.Point(0, 280);
+            this.iconButtonOrders.Name = "iconButtonOrders";
+            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButtonOrders.Size = new System.Drawing.Size(233, 40);
+            this.iconButtonOrders.TabIndex = 4;
+            this.iconButtonOrders.Text = "Orders";
+            this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOrders.UseVisualStyleBackColor = true;
+            this.iconButtonOrders.Click += new System.EventHandler(this.iconButtonOrders_Click);
+            // 
             // iconButtonSales
             // 
             this.iconButtonSales.Dock = System.Windows.Forms.DockStyle.Top;
@@ -704,40 +761,6 @@ namespace StarMeatsPos
             this.iconButtonAccessControl.UseVisualStyleBackColor = true;
             this.iconButtonAccessControl.Click += new System.EventHandler(this.iconButtonAccessControl_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelLogo.Controls.Add(this.Role);
-            this.panelLogo.Controls.Add(this.labelUsername);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(233, 95);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // Role
-            // 
-            this.Role.AutoSize = true;
-            this.Role.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Role.Location = new System.Drawing.Point(30, 59);
-            this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(46, 17);
-            this.Role.TabIndex = 2;
-            this.Role.Text = "label2";
-            this.Role.Visible = false;
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelUsername.Location = new System.Drawing.Point(30, 23);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(46, 17);
-            this.labelUsername.TabIndex = 1;
-            this.labelUsername.Text = "label1";
-            this.labelUsername.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -748,28 +771,6 @@ namespace StarMeatsPos
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Controls.Add(this.pictureBox2);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1112, 721);
-            this.panelChildForm.TabIndex = 1;
-            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(298, 172);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(518, 387);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // StarMeats
             // 
@@ -793,9 +794,9 @@ namespace StarMeatsPos
             this.panelSales.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
