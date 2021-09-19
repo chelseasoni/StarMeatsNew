@@ -27,8 +27,10 @@ namespace StarMeatsPos
 
         private void Staff_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
             // TODO: This line of code loads data into the 'group3DataSet.Employee' table. You can move, or remove it, as needed.
-            
+
             // TODO: This line of code loads data into the 'starMeatsDataSet.Employee' table. You can move, or remove it, as needed.
             //this.employeeTableAdapter.Fill(this.starMeatsDataSet.Employee);
             ToolTip toolTip = new ToolTip();
@@ -75,8 +77,27 @@ namespace StarMeatsPos
                 textBox6.ReadOnly = true;
                 textBox7.ReadOnly = true;
                 employeeTableAdapter1.FillEmployee(group3DataSet.Employee, Login.empID);
+                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
+
+                dataGridView1.Visible = false;
+                textBox7.Visible = false;
+                foreach (DataRow row in dataSet1.Employee.Rows)
+                {
+                    DataRowView current = (DataRowView)this.employeeBindingSource2.Current;
+                    //MessageBox.Show(Convert.ToString(Convert.ToString(current["Employee_Id"])).Equals(Convert.ToString(Login.empID)) + " " + Convert.ToString(current["Employee_Id"]) + " " + Login.empID);
+                    if (Convert.ToString(current["Employee_Id"]).Equals(Convert.ToString(Login.empID)))
+                    {
+                        //MessageBox.Show("Found");
+                        break;
+                    }
+                    else
+                    {
+                        employeeBindingSource2.MoveNext();
+                    }
+                }
             }
             else {
+                dataGridView1.Visible = true;
                 buttonFirst.Visible = true;
                 buttonNext.Visible = true;
                 buttonPrevious.Visible = true;
@@ -99,40 +120,44 @@ namespace StarMeatsPos
                 textBox5.ReadOnly = false;
                 textBox6.ReadOnly = false;
                 textBox7.ReadOnly = false;
+                textBox7.Visible = true;
                 this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
+
+                
             }
 
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            this.employeeBindingSource1.MoveNext();
+            this.employeeBindingSource2.MoveNext();
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            this.employeeBindingSource1.MoveFirst();
+            this.employeeBindingSource2.MoveFirst();
         }
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            this.employeeBindingSource1.MovePrevious();
+            this.employeeBindingSource2.MovePrevious();
         }
 
         private void buttonLast_Click(object sender, EventArgs e)
         {
-            this.employeeBindingSource1.MoveLast();
+            this.employeeBindingSource2.MoveLast();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            employeeBindingSource1.MoveFirst();
+            employeeBindingSource2.MoveFirst();
             Boolean found = false;
             if (String.IsNullOrEmpty(textBoxStaffSurname.Text))
             {
-                foreach (DataRow row in group3DataSet.Employee.Rows)
+                foreach (DataRow row in dataSet1.Employee.Rows)
                 {
-                    DataRowView current = (DataRowView)this.employeeBindingSource1.Current;
+                    DataRowView current = (DataRowView)this.employeeBindingSource2.Current;
 
                     if (Convert.ToString(current["Employee_Name"]).Equals(textBoxStaffName.Text))
                     {
@@ -142,7 +167,7 @@ namespace StarMeatsPos
                     }
                     else
                     {
-                        employeeBindingSource1.MoveNext();
+                        employeeBindingSource2.MoveNext();
                     }
                 }
                 if (!found)
@@ -152,9 +177,9 @@ namespace StarMeatsPos
             }
             else
             {
-                foreach (DataRow row in group3DataSet.Employee.Rows)
+                foreach (DataRow row in dataSet1.Employee.Rows)
                 {
-                    DataRowView current = (DataRowView)this.employeeBindingSource1.Current;
+                    DataRowView current = (DataRowView)this.employeeBindingSource2.Current;
 
                     if (Convert.ToString(current["Employee_Name"]).Equals(textBoxStaffName.Text) &&
                         (Convert.ToString(current["Employee_Surname"]).Equals(textBoxStaffSurname.Text)))
@@ -165,7 +190,7 @@ namespace StarMeatsPos
                     }
                     else
                     {
-                        employeeBindingSource1.MoveNext();
+                        employeeBindingSource2.MoveNext();
                     }
                 }
                 if (!found)
@@ -259,7 +284,7 @@ namespace StarMeatsPos
                 }
                 // password
                 bool validPassword = true;
-                test = textBox7.Text;
+                test = textBox8.Text;
                 if (String.IsNullOrEmpty(test))
                 {
                     validPassword = false;
@@ -268,22 +293,27 @@ namespace StarMeatsPos
                 if (!validPassword)
                 {
                     MessageBox.Show("Invalid Password");
-                    textBox7.Clear();
+                    textBox8.Clear();
                 }
                 //
                 if (allValidateDetails)
                 {
                     employeeTableAdapter1.Insert(Convert.ToString(textBox3.Text), Convert.ToString(textBox2.Text), Convert.ToString(textBox5.Text),
-                        Convert.ToString(textBox6.Text), Convert.ToString(textBox4.Text), Convert.ToString(textBox7.Text));
+                        Convert.ToString(textBox6.Text), Convert.ToString(textBox4.Text), Convert.ToString(textBox8.Text));
+                    //
                     this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+                    this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
                     label1.Visible = true;
                     textBox1.Visible = true;
                     textBox7.Clear();
-                    textBox7.Visible = false;
+                    // textBox7.Visible = false;
+                    textBox8.Clear();
                     label8.Visible = false;
                     button1.Enabled = false;
                     button2.Enabled = true;
                     button5.Enabled = true;
+                    textBox8.Visible = false;
+                    checkBox1.Visible = true;
                     MessageBox.Show("Empolyee's details have been saved");
 
                 }
@@ -296,20 +326,24 @@ namespace StarMeatsPos
             {
                 label1.Visible = true;
                 textBox1.Visible = true;
-                textBox7.Clear();
-                textBox7.Visible = false;
+                //textBox7.Clear();
+                //textBox7.Visible = false;
                 label8.Visible = false;
                 button1.Enabled = false;
                 button2.Enabled = true;
                 button5.Enabled = true;
+                textBox8.Visible = false;
+                checkBox1.Visible = true;
                 this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
                 MessageBox.Show("Empolyee's new details have been removed");
+                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+            this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
             MessageBox.Show("Employee's details have been reloaded");
         }
         
@@ -416,6 +450,9 @@ namespace StarMeatsPos
                         Convert.ToString(textBox6.Text), Convert.ToString(textBox4.Text), Convert.ToString(textBox7.Text), Convert.ToInt32(textBox1.Text));
                     MessageBox.Show("Empolyee's details Updated");
                     this.employeeTableAdapter1.Fill(group3DataSet.Employee);
+                    employeeTableAdapter2.UpdateQuery(Convert.ToBoolean(checkBox1.Checked), Convert.ToInt32(textBox1.Text));
+                    this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+                    this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
                     //this.employeeTableAdapter1.Fill(this.starMeatsDataSet.Employee);
                 }
                 else
@@ -426,6 +463,7 @@ namespace StarMeatsPos
             else
             {
                 this.employeeTableAdapter1.Fill(group3DataSet.Employee);
+                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
             }
         }
 
@@ -448,7 +486,8 @@ namespace StarMeatsPos
             textBox6.Clear();
             textBox4.Clear();
             textBox7.Clear();
-            
+            textBox8.Visible = true;
+            checkBox1.Visible = false;
             label8.Visible = true;
             button1.Enabled = true;
             button2.Enabled = false;

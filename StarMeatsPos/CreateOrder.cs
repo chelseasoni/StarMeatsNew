@@ -30,6 +30,8 @@ namespace StarMeatsPos
 
         private void ProcessOrder_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter1.Fill(this.dataSet1.Employee);
             // TODO: This line of code loads data into the 'group3DataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.group3DataSet.Customer);
             // TODO: This line of code loads data into the 'group3DataSet.Employee' table. You can move, or remove it, as needed.
@@ -85,6 +87,32 @@ namespace StarMeatsPos
             toolTip.SetToolTip(dateTimePickerEndDate, "Contains the order end date");
             toolTip.SetToolTip(textBox1, "Contains the Customer's ID  who is making the order");
             toolTip.SetToolTip(textBox2, "Contains the Employee's ID who will prepare the order");
+
+            this.employeeBindingSource1.MoveFirst();
+            //Boolean found = false;
+            foreach (DataRow row in dataSet1.Employee.Rows)
+            {
+
+                DataRowView currentCust = (DataRowView)this.employeeBindingSource1.Current;
+
+                //MessageBox.Show(Convert.ToString(currentCust["AtWork"]).Equals("True"));
+                if ((Convert.ToString(currentCust["Employee_Role"]).Equals("Butcher")))
+                {
+
+                    if ((Convert.ToBoolean(currentCust["AtWork"])))
+                    {
+                        //MessageBox.Show("fewfwefwf");
+                        comboBox1.Items.Add(currentCust["Employee_Id"] + " " + currentCust["Employee_Name"]);
+                    }
+                }
+
+
+                employeeBindingSource1.MoveNext();
+
+            }
+            comboBox1.SelectedIndex = 0;
+
+
         }
         private decimal total = 0;
         private ArrayList prodId = new ArrayList();
@@ -143,6 +171,7 @@ namespace StarMeatsPos
                             richTextBox1.AppendText("\n\r Item No: " + Convert.ToString(i + 1) + "\n\r Product ID: " + prodId[i] + "\n\r Product Name: " + prodName[i] + "\n\r Product Price: R" + prodCost[i] + "\n\r Product Quantity: " + prodQuaninty[i] + "\n\r **********************");
                         }
                         richTextBox1.AppendText("\n\r Total Cost: R" + Convert.ToString(total));
+                        buttonProcessSale.Enabled = true;
                     }
                     else
                     {
@@ -448,7 +477,7 @@ namespace StarMeatsPos
                     MessageBox.Show("Customer ID not found");
                 }
                 // test Emplyee Id
-                this.employeeBindingSource.MoveFirst();
+                /*this.employeeBindingSource.MoveFirst();
                 found = false;
                 foreach (DataRow row in group3DataSet.Employee.Rows)
                 {
@@ -468,10 +497,13 @@ namespace StarMeatsPos
                     validateIds = false;
                     MessageBox.Show("Employee ID not found");
                 }
-                //
+                //*/
                 if (validateIds)
                 {
-                    orderTableAdapter1.Insert(Convert.ToInt32(textBox1.Text), DateTime.Now, dateTimePickerEndDate.Value, DateTime.Now, Convert.ToInt32(textBox2.Text),
+                    String cmbstr = comboBox1.Text;
+                    //String manstr = textBox2.Text;
+                    String cmId = cmbstr.Substring(0, 2);
+                    orderTableAdapter1.Insert(Convert.ToInt32(textBox1.Text), DateTime.Now, dateTimePickerEndDate.Value, DateTime.Now, Convert.ToInt32(cmId),
                         total, false, true, false);
                     this.orderTableAdapter1.Fill(this.group3DataSet.Order);
                     orderBindingSource.MoveLast();
