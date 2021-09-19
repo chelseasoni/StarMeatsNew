@@ -813,6 +813,11 @@ namespace StarMeatsPos
 
         }
 
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void receiptrichTextBox_TextChanged(object sender, EventArgs e)
         {
 

@@ -481,6 +481,13 @@ namespace StarMeatsPos
                     {
                         orderProductTableAdapter1.Insert(OrderNo, Convert.ToInt32(prodId[i]), Convert.ToInt32(prodQuaninty[i]), Convert.ToDecimal(prodCost[i]));
                     }
+
+                    string str = "";
+                    for (int i = 0; i < prodId.Count; i++)
+                    {
+                        str += "\n\r Item No: " + Convert.ToString(i + 1) + "\n\r Product ID: " + prodId[i] + "\n\r Product Name: " + prodName[i] + "\n\r Product Price: R" + prodCost[i] + "\n\r Product Quantity: " + prodQuaninty[i] + "\n\r **********************";
+                    }
+
                     this.orderTableAdapter1.Fill(this.group3DataSet.Order);
                     this.productTableAdapter1.Fill(this.group3DataSet.Product);
                     MessageBox.Show("Order is Created");
@@ -491,15 +498,17 @@ namespace StarMeatsPos
                     richTextBox1.Clear();
                     total = 0;
 
-                    /*try
+                  
+
+                    try
                     {
                         MailMessage mail = new MailMessage();
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                         mail.From = new MailAddress("AsheelDatharam3@gmail.com");
-                        mail.To.Add("asheel.dathz@gmail.com"); // replace with your email adress to test
+                        mail.To.Add("chelseasoni@gmail.com"); // replace with your email adress to test
                         mail.Subject = "Star Meats Order Confirmation";
-                        mail.Body = "Order confirmed\nOrder number: " + group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[0] + "\n Order Total: " + String.Format("{0:C}", Convert.ToDecimal(group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[6])); ;
+                        mail.Body = "Order confirmed\nOrder number: " + group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[0] + "\n Order Total: " + String.Format("{0:C}", Convert.ToDecimal(group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[6])) +  "\n\n"+ str ;
 
                         SmtpServer.Port = 587;
                         SmtpServer.Credentials = new System.Net.NetworkCredential("AsheelDatharam3@gmail.com", "AsheelDatharam123");
@@ -507,11 +516,12 @@ namespace StarMeatsPos
 
                         SmtpServer.Send(mail);
                         MessageBox.Show("Email confirmation sent");
+                      
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("There was a problem sending the email confirmation, confirmation not sent");
-                    }*/
+                    }
                 }
             }catch (Exception)
             {

@@ -7589,7 +7589,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfil" +
@@ -7603,50 +7603,58 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
-                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Custom" +
-                "er_Id = @custid)";
+            this._commandCollection[2].CommandText = @"SELECT        Customer.Cust_Name, [Order].Order_Id, [Order].Customer_Id, [Order].Date, [Order].End_Date, [Order].Time, [Order].Total, [Order].Is_Fulfilled, [Order].in_progress, [Order].prepared
+FROM            [Order] INNER JOIN
+                         Customer ON [Order].Customer_Id = Customer.Customer_Id
+WHERE        ([Order].prepared = 1) AND (Customer.Cust_Name = @cname)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@custid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cname", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Cust_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
-                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Order_" +
-                "Id = @ID)";
+                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Custom" +
+                "er_Id = @custid) AND (prepared = 1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@custid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
-                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Employ" +
-                "ee_Id = @ID)";
+                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Order_" +
+                "Id = @ID) AND (prepared = 1)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
-                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (in_pro" +
-                "gress = 1) AND (Is_Fulfilled = 0) AND (prepared = 0)";
+                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Employ" +
+                "ee_Id = @ID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
-                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Order_" +
-                "Id = @ID)";
+                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (in_pro" +
+                "gress = 1) AND (Is_Fulfilled = 0) AND (prepared = 0)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE       [Order]
+            this._commandCollection[7].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
+                "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Order_" +
+                "Id = @ID)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"UPDATE       [Order]
 SET                Is_Fulfilled = @Is_Fulfill, prepared = @prepared, in_progress =@in_progress
 WHERE        (Order_Id = @Original_Order_Id);  
 SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfilled, in_progress, prepared FROM [Order] WHERE (Order_Id = @Order_Id)";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Is_Fulfill", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Is_Fulfilled", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prepared", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "prepared", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@in_progress", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "in_progress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Is_Fulfill", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Is_Fulfilled", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prepared", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "prepared", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@in_progress", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "in_progress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7701,8 +7709,44 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBycustomerid(group3DataSet.OrderDataTable dataTable, int custid) {
+        public virtual int FillBy(group3DataSet.OrderDataTable dataTable, string cname) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((cname == null)) {
+                throw new global::System.ArgumentNullException("cname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual group3DataSet.OrderDataTable GetDataBy7(string cname) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((cname == null)) {
+                throw new global::System.ArgumentNullException("cname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cname));
+            }
+            group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBycustomerid(group3DataSet.OrderDataTable dataTable, int custid) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(custid));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7716,7 +7760,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual group3DataSet.OrderDataTable GetDataBy5(int custid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(custid));
             group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
@@ -7728,7 +7772,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByORDERID(group3DataSet.OrderDataTable dataTable, int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7742,7 +7786,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual group3DataSet.OrderDataTable GetDataBy6(int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
@@ -7754,7 +7798,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillEmployee(group3DataSet.OrderDataTable dataTable, int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7768,7 +7812,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual group3DataSet.OrderDataTable GetDataBy1(int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
@@ -7780,7 +7824,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int NewOrders(group3DataSet.OrderDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7793,7 +7837,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual group3DataSet.OrderDataTable GetDataBy3() {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7804,7 +7848,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int SearchOrderID(group3DataSet.OrderDataTable dataTable, int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7818,7 +7862,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual group3DataSet.OrderDataTable GetDataBy2(int ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             group3DataSet.OrderDataTable dataTable = new group3DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
@@ -8008,7 +8052,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(bool Is_Fulfill, bool prepared, bool in_progress, int Original_Order_Id, int Order_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((bool)(Is_Fulfill));
             command.Parameters[1].Value = ((bool)(prepared));
             command.Parameters[2].Value = ((bool)(in_progress));
@@ -10309,7 +10353,7 @@ SELECT Sale_Id, Prod_Id, Prod_QuantitySold, Prod_SoldPrice FROM SaleProduct WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual group3DataSet.SaleProductDataTable GetDataBy1(int saleid) {
+        public virtual group3DataSet.SaleProductDataTable GetDataBy11(int saleid) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(saleid));
             group3DataSet.SaleProductDataTable dataTable = new group3DataSet.SaleProductDataTable();

@@ -153,7 +153,7 @@ namespace StarMeatsPos
             // TODO: This line of code loads data into the 'group3DataSet.Payment' table. You can move, or remove it, as needed.
             this.paymentTableAdapter.Fill(this.group3DataSet.Payment);
             // TODO: This line of code loads data into the 'group3DataSet.OrderProduct' table. You can move, or remove it, as needed.
-            orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
+            //orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
             dgvOrder.ForeColor = Color.Black;
             
             // TODO: This line of code loads data into the 'group3DataSet.Order' table. You can move, or remove it, as needed.
@@ -260,6 +260,19 @@ namespace StarMeatsPos
             textBox1.Text = " ";
 
             dataGridView2.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String n = textBox4.Text;
+                orderTableAdapter.FillBy(group3DataSet.Order,n);
+            }
+            catch (Exception e14)
+            {
+                MessageBox.Show("Invalid Customer Name");
+            }
         }
     }
 }
