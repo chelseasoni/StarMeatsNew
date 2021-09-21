@@ -108,6 +108,20 @@ namespace StarMeatsPos
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataSet1 = new StarMeatsPos.DataSet1();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter1 = new StarMeatsPos.DataSet1TableAdapters.EmployeeTableAdapter();
+            this.employeeIdDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeSurnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeContactDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeRoleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeePasswordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atWorkDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -121,6 +135,10 @@ namespace StarMeatsPos
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -139,6 +157,7 @@ namespace StarMeatsPos
             // buttonProcessSale
             // 
             this.buttonProcessSale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonProcessSale.Enabled = false;
             this.buttonProcessSale.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonProcessSale.Location = new System.Drawing.Point(69, 295);
             this.buttonProcessSale.Margin = new System.Windows.Forms.Padding(4);
@@ -593,11 +612,12 @@ namespace StarMeatsPos
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(135, 112);
+            this.textBox2.Location = new System.Drawing.Point(881, 436);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(144, 23);
             this.textBox2.TabIndex = 36;
+            this.textBox2.Visible = false;
             // 
             // productTableAdapter1
             // 
@@ -641,6 +661,7 @@ namespace StarMeatsPos
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(246, 220);
             this.dataGridView2.TabIndex = 37;
+            this.dataGridView2.Visible = false;
             // 
             // employeeIdDataGridViewTextBoxColumn1
             // 
@@ -781,10 +802,10 @@ namespace StarMeatsPos
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.buttonProcessSale);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dateTimePickerEndDate);
@@ -806,14 +827,117 @@ namespace StarMeatsPos
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(378, 226);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(240, 32);
+            this.dataGridView4.TabIndex = 42;
+            this.dataGridView4.Visible = false;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeeIdDataGridViewTextBoxColumn2,
+            this.employeeNameDataGridViewTextBoxColumn1,
+            this.employeeSurnameDataGridViewTextBoxColumn1,
+            this.employeeContactDataGridViewTextBoxColumn1,
+            this.employeeEmailDataGridViewTextBoxColumn1,
+            this.employeeRoleDataGridViewTextBoxColumn1,
+            this.employeePasswordDataGridViewTextBoxColumn1,
+            this.atWorkDataGridViewCheckBoxColumn});
+            this.dataGridView5.DataSource = this.employeeBindingSource1;
+            this.dataGridView5.Location = new System.Drawing.Point(891, 221);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(240, 37);
+            this.dataGridView5.TabIndex = 43;
+            this.dataGridView5.Visible = false;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.dataSet1;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // employeeIdDataGridViewTextBoxColumn2
+            // 
+            this.employeeIdDataGridViewTextBoxColumn2.DataPropertyName = "Employee_Id";
+            this.employeeIdDataGridViewTextBoxColumn2.HeaderText = "Employee_Id";
+            this.employeeIdDataGridViewTextBoxColumn2.Name = "employeeIdDataGridViewTextBoxColumn2";
+            this.employeeIdDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // employeeNameDataGridViewTextBoxColumn1
+            // 
+            this.employeeNameDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Name";
+            this.employeeNameDataGridViewTextBoxColumn1.HeaderText = "Employee_Name";
+            this.employeeNameDataGridViewTextBoxColumn1.Name = "employeeNameDataGridViewTextBoxColumn1";
+            // 
+            // employeeSurnameDataGridViewTextBoxColumn1
+            // 
+            this.employeeSurnameDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Surname";
+            this.employeeSurnameDataGridViewTextBoxColumn1.HeaderText = "Employee_Surname";
+            this.employeeSurnameDataGridViewTextBoxColumn1.Name = "employeeSurnameDataGridViewTextBoxColumn1";
+            // 
+            // employeeContactDataGridViewTextBoxColumn1
+            // 
+            this.employeeContactDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Contact";
+            this.employeeContactDataGridViewTextBoxColumn1.HeaderText = "Employee_Contact";
+            this.employeeContactDataGridViewTextBoxColumn1.Name = "employeeContactDataGridViewTextBoxColumn1";
+            // 
+            // employeeEmailDataGridViewTextBoxColumn1
+            // 
+            this.employeeEmailDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Email";
+            this.employeeEmailDataGridViewTextBoxColumn1.HeaderText = "Employee_Email";
+            this.employeeEmailDataGridViewTextBoxColumn1.Name = "employeeEmailDataGridViewTextBoxColumn1";
+            // 
+            // employeeRoleDataGridViewTextBoxColumn1
+            // 
+            this.employeeRoleDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Role";
+            this.employeeRoleDataGridViewTextBoxColumn1.HeaderText = "Employee_Role";
+            this.employeeRoleDataGridViewTextBoxColumn1.Name = "employeeRoleDataGridViewTextBoxColumn1";
+            // 
+            // employeePasswordDataGridViewTextBoxColumn1
+            // 
+            this.employeePasswordDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Password";
+            this.employeePasswordDataGridViewTextBoxColumn1.HeaderText = "Employee_Password";
+            this.employeePasswordDataGridViewTextBoxColumn1.Name = "employeePasswordDataGridViewTextBoxColumn1";
+            // 
+            // atWorkDataGridViewCheckBoxColumn
+            // 
+            this.atWorkDataGridViewCheckBoxColumn.DataPropertyName = "AtWork";
+            this.atWorkDataGridViewCheckBoxColumn.HeaderText = "AtWork";
+            this.atWorkDataGridViewCheckBoxColumn.Name = "atWorkDataGridViewCheckBoxColumn";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(135, 112);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(144, 24);
+            this.comboBox1.TabIndex = 37;
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.dataGridView5);
+            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -844,7 +968,12 @@ namespace StarMeatsPos
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -928,5 +1057,19 @@ namespace StarMeatsPos
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
+        private DataSet1TableAdapters.EmployeeTableAdapter employeeTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSurnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeContactDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeEmailDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeRoleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeePasswordDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn atWorkDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

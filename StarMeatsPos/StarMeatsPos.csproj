@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRNumOrdersPerMonth.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRNumOrdersPerMonth.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport4.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="EmployeePerformanceReport.cs">
       <SubType>Form</SubType>
@@ -88,6 +99,12 @@
     </Compile>
     <Compile Include="Help2.designer.cs">
       <DependentUpon>Help2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumOrdersPerMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumOrdersPerMonth.Designer.cs">
+      <DependentUpon>NumOrdersPerMonth.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdersReporting.cs">
       <SubType>Form</SubType>
@@ -177,6 +194,10 @@
     <Compile Include="ViewSales.Designer.cs">
       <DependentUpon>ViewSales.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CRNumOrdersPerMonth.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRNumOrdersPerMonth.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -190,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help2.resx">
       <DependentUpon>Help2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumOrdersPerMonth.resx">
+      <DependentUpon>NumOrdersPerMonth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersReporting.resx">
       <DependentUpon>OrdersReporting.cs</DependentUpon>
@@ -240,6 +264,17 @@
     <EmbeddedResource Include="ViewSales.resx">
       <DependentUpon>ViewSales.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="group3DataSet.xsc">
       <DependentUpon>group3DataSet.xsd</DependentUpon>
     </None>
