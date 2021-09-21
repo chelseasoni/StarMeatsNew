@@ -73,6 +73,7 @@ namespace StarMeatsPos
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.employeeTableAdapter1 = new StarMeatsPos.DataSet1TableAdapters.EmployeeTableAdapter();
             this.panelSideMenu.SuspendLayout();
             this.panelReports.SuspendLayout();
             this.panelCustomers.SuspendLayout();
@@ -772,6 +773,10 @@ namespace StarMeatsPos
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
             // StarMeats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -846,6 +851,7 @@ namespace StarMeatsPos
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private DataSet1TableAdapters.EmployeeTableAdapter employeeTableAdapter1;
     }
 }
 
