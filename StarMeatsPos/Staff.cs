@@ -122,9 +122,7 @@ namespace StarMeatsPos
                 textBox7.ReadOnly = false;
                 textBox7.Visible = true;
                 this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
-                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
-
-                
+                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);                
             }
 
         }
