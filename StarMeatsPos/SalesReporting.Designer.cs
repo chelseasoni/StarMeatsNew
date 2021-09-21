@@ -29,6 +29,7 @@ namespace StarMeatsPos
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbDisplay = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@ namespace StarMeatsPos
             this.tanumSales1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.tanumSales();
             this.taSalesReport1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.taSalesReport();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@ namespace StarMeatsPos
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(417, 221);
+            this.label2.Location = new System.Drawing.Point(413, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 8;
@@ -67,7 +70,7 @@ namespace StarMeatsPos
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(141, 221);
+            this.label1.Location = new System.Drawing.Point(137, 317);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 7;
@@ -76,7 +79,7 @@ namespace StarMeatsPos
             // toDatedtp
             // 
             this.toDatedtp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toDatedtp.Location = new System.Drawing.Point(420, 257);
+            this.toDatedtp.Location = new System.Drawing.Point(416, 353);
             this.toDatedtp.Name = "toDatedtp";
             this.toDatedtp.Size = new System.Drawing.Size(200, 22);
             this.toDatedtp.TabIndex = 6;
@@ -85,7 +88,7 @@ namespace StarMeatsPos
             // FromDatedtp
             // 
             this.FromDatedtp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FromDatedtp.Location = new System.Drawing.Point(144, 257);
+            this.FromDatedtp.Location = new System.Drawing.Point(140, 354);
             this.FromDatedtp.Name = "FromDatedtp";
             this.FromDatedtp.Size = new System.Drawing.Size(200, 22);
             this.FromDatedtp.TabIndex = 5;
@@ -114,11 +117,15 @@ namespace StarMeatsPos
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(138, 175);
+            this.label3.Location = new System.Drawing.Point(134, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 31);
             this.label3.TabIndex = 15;
             this.label3.Text = "Select a time frame";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // SalesReporting
             // 
@@ -154,5 +161,7 @@ namespace StarMeatsPos
         private StarMeatsDataSetTableAdapters.tanumSales tanumSales1;
         private StarMeatsDataSetTableAdapters.taSalesReport taSalesReport1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
