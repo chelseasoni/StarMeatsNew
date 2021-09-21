@@ -38,22 +38,13 @@ namespace StarMeatsPos
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.gbxOrderDetails = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dgvPay = new System.Windows.Forms.DataGridView();
-            this.dgvSaleProd = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.saleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +53,19 @@ namespace StarMeatsPos
             this.saleTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.group3DataSet = new StarMeatsPos.group3DataSet();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.orderIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oProdQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oProdSoldPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dgvPay = new System.Windows.Forms.DataGridView();
+            this.dgvSaleProd = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +77,7 @@ namespace StarMeatsPos
             this.inprogressDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.preparedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.orderTableAdapter = new StarMeatsPos.group3DataSetTableAdapters.OrderTableAdapter();
             this.orderProductTableAdapter = new StarMeatsPos.group3DataSetTableAdapters.OrderProductTableAdapter();
             this.orderProductBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -89,13 +89,13 @@ namespace StarMeatsPos
             this.gbxProcessOrder.SuspendLayout();
             this.gbxOrderDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
@@ -206,6 +206,33 @@ namespace StarMeatsPos
             this.gbxOrderDetails.Text = "Order Details";
             this.gbxOrderDetails.Enter += new System.EventHandler(this.gbxOrderDetails_Enter);
             // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(698, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(620, 23);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(73, 22);
+            this.textBox4.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(509, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Customer Name";
+            // 
             // button5
             // 
             this.button5.ForeColor = System.Drawing.Color.Black;
@@ -251,6 +278,53 @@ namespace StarMeatsPos
             this.dataGridView2.TabIndex = 18;
             this.dataGridView2.Visible = false;
             // 
+            // saleIdDataGridViewTextBoxColumn
+            // 
+            this.saleIdDataGridViewTextBoxColumn.DataPropertyName = "Sale_Id";
+            this.saleIdDataGridViewTextBoxColumn.HeaderText = "Sale_Id";
+            this.saleIdDataGridViewTextBoxColumn.Name = "saleIdDataGridViewTextBoxColumn";
+            this.saleIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeIdDataGridViewTextBoxColumn1
+            // 
+            this.employeeIdDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Id";
+            this.employeeIdDataGridViewTextBoxColumn1.HeaderText = "Employee_Id";
+            this.employeeIdDataGridViewTextBoxColumn1.Name = "employeeIdDataGridViewTextBoxColumn1";
+            // 
+            // customerIdDataGridViewTextBoxColumn1
+            // 
+            this.customerIdDataGridViewTextBoxColumn1.DataPropertyName = "Customer_Id";
+            this.customerIdDataGridViewTextBoxColumn1.HeaderText = "Customer_Id";
+            this.customerIdDataGridViewTextBoxColumn1.Name = "customerIdDataGridViewTextBoxColumn1";
+            // 
+            // saleDateDataGridViewTextBoxColumn
+            // 
+            this.saleDateDataGridViewTextBoxColumn.DataPropertyName = "Sale_Date";
+            this.saleDateDataGridViewTextBoxColumn.HeaderText = "Sale_Date";
+            this.saleDateDataGridViewTextBoxColumn.Name = "saleDateDataGridViewTextBoxColumn";
+            // 
+            // saleTimeDataGridViewTextBoxColumn
+            // 
+            this.saleTimeDataGridViewTextBoxColumn.DataPropertyName = "Sale_Time";
+            this.saleTimeDataGridViewTextBoxColumn.HeaderText = "Sale_Time";
+            this.saleTimeDataGridViewTextBoxColumn.Name = "saleTimeDataGridViewTextBoxColumn";
+            // 
+            // saleTotalDataGridViewTextBoxColumn
+            // 
+            this.saleTotalDataGridViewTextBoxColumn.DataPropertyName = "Sale_Total";
+            this.saleTotalDataGridViewTextBoxColumn.HeaderText = "Sale_Total";
+            this.saleTotalDataGridViewTextBoxColumn.Name = "saleTotalDataGridViewTextBoxColumn";
+            // 
+            // saleBindingSource
+            // 
+            this.saleBindingSource.DataMember = "Sale";
+            this.saleBindingSource.DataSource = this.group3DataSet;
+            // 
+            // group3DataSet
+            // 
+            this.group3DataSet.DataSetName = "group3DataSet";
+            this.group3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -285,6 +359,36 @@ namespace StarMeatsPos
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(747, 124);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.Visible = false;
+            // 
+            // orderIdDataGridViewTextBoxColumn1
+            // 
+            this.orderIdDataGridViewTextBoxColumn1.DataPropertyName = "Order_Id";
+            this.orderIdDataGridViewTextBoxColumn1.HeaderText = "Order_Id";
+            this.orderIdDataGridViewTextBoxColumn1.Name = "orderIdDataGridViewTextBoxColumn1";
+            // 
+            // prodIdDataGridViewTextBoxColumn
+            // 
+            this.prodIdDataGridViewTextBoxColumn.DataPropertyName = "Prod_Id";
+            this.prodIdDataGridViewTextBoxColumn.HeaderText = "Prod_Id";
+            this.prodIdDataGridViewTextBoxColumn.Name = "prodIdDataGridViewTextBoxColumn";
+            // 
+            // oProdQuantityDataGridViewTextBoxColumn
+            // 
+            this.oProdQuantityDataGridViewTextBoxColumn.DataPropertyName = "OProd_Quantity";
+            this.oProdQuantityDataGridViewTextBoxColumn.HeaderText = "OProd_Quantity";
+            this.oProdQuantityDataGridViewTextBoxColumn.Name = "oProdQuantityDataGridViewTextBoxColumn";
+            // 
+            // oProdSoldPriceDataGridViewTextBoxColumn
+            // 
+            this.oProdSoldPriceDataGridViewTextBoxColumn.DataPropertyName = "OProd_SoldPrice";
+            this.oProdSoldPriceDataGridViewTextBoxColumn.HeaderText = "OProd_SoldPrice";
+            this.oProdSoldPriceDataGridViewTextBoxColumn.Name = "oProdSoldPriceDataGridViewTextBoxColumn";
+            // 
+            // orderProductBindingSource
+            // 
+            this.orderProductBindingSource.DataMember = "OrderProduct";
+            this.orderProductBindingSource.DataSource = this.group3DataSet;
             // 
             // textBox2
             // 
@@ -344,117 +448,6 @@ namespace StarMeatsPos
             this.dgvOrder.TabIndex = 4;
             this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             this.dgvOrder.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrder_RowHeaderMouseDoubleClick);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(790, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(309, 683);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(509, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 16);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Customer Name";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(620, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(73, 22);
-            this.textBox4.TabIndex = 23;
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(698, 24);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // saleIdDataGridViewTextBoxColumn
-            // 
-            this.saleIdDataGridViewTextBoxColumn.DataPropertyName = "Sale_Id";
-            this.saleIdDataGridViewTextBoxColumn.HeaderText = "Sale_Id";
-            this.saleIdDataGridViewTextBoxColumn.Name = "saleIdDataGridViewTextBoxColumn";
-            this.saleIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeIdDataGridViewTextBoxColumn1
-            // 
-            this.employeeIdDataGridViewTextBoxColumn1.DataPropertyName = "Employee_Id";
-            this.employeeIdDataGridViewTextBoxColumn1.HeaderText = "Employee_Id";
-            this.employeeIdDataGridViewTextBoxColumn1.Name = "employeeIdDataGridViewTextBoxColumn1";
-            // 
-            // customerIdDataGridViewTextBoxColumn1
-            // 
-            this.customerIdDataGridViewTextBoxColumn1.DataPropertyName = "Customer_Id";
-            this.customerIdDataGridViewTextBoxColumn1.HeaderText = "Customer_Id";
-            this.customerIdDataGridViewTextBoxColumn1.Name = "customerIdDataGridViewTextBoxColumn1";
-            // 
-            // saleDateDataGridViewTextBoxColumn
-            // 
-            this.saleDateDataGridViewTextBoxColumn.DataPropertyName = "Sale_Date";
-            this.saleDateDataGridViewTextBoxColumn.HeaderText = "Sale_Date";
-            this.saleDateDataGridViewTextBoxColumn.Name = "saleDateDataGridViewTextBoxColumn";
-            // 
-            // saleTimeDataGridViewTextBoxColumn
-            // 
-            this.saleTimeDataGridViewTextBoxColumn.DataPropertyName = "Sale_Time";
-            this.saleTimeDataGridViewTextBoxColumn.HeaderText = "Sale_Time";
-            this.saleTimeDataGridViewTextBoxColumn.Name = "saleTimeDataGridViewTextBoxColumn";
-            // 
-            // saleTotalDataGridViewTextBoxColumn
-            // 
-            this.saleTotalDataGridViewTextBoxColumn.DataPropertyName = "Sale_Total";
-            this.saleTotalDataGridViewTextBoxColumn.HeaderText = "Sale_Total";
-            this.saleTotalDataGridViewTextBoxColumn.Name = "saleTotalDataGridViewTextBoxColumn";
-            // 
-            // saleBindingSource
-            // 
-            this.saleBindingSource.DataMember = "Sale";
-            this.saleBindingSource.DataSource = this.group3DataSet;
-            // 
-            // group3DataSet
-            // 
-            this.group3DataSet.DataSetName = "group3DataSet";
-            this.group3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderIdDataGridViewTextBoxColumn1
-            // 
-            this.orderIdDataGridViewTextBoxColumn1.DataPropertyName = "Order_Id";
-            this.orderIdDataGridViewTextBoxColumn1.HeaderText = "Order_Id";
-            this.orderIdDataGridViewTextBoxColumn1.Name = "orderIdDataGridViewTextBoxColumn1";
-            // 
-            // prodIdDataGridViewTextBoxColumn
-            // 
-            this.prodIdDataGridViewTextBoxColumn.DataPropertyName = "Prod_Id";
-            this.prodIdDataGridViewTextBoxColumn.HeaderText = "Prod_Id";
-            this.prodIdDataGridViewTextBoxColumn.Name = "prodIdDataGridViewTextBoxColumn";
-            // 
-            // oProdQuantityDataGridViewTextBoxColumn
-            // 
-            this.oProdQuantityDataGridViewTextBoxColumn.DataPropertyName = "OProd_Quantity";
-            this.oProdQuantityDataGridViewTextBoxColumn.HeaderText = "OProd_Quantity";
-            this.oProdQuantityDataGridViewTextBoxColumn.Name = "oProdQuantityDataGridViewTextBoxColumn";
-            // 
-            // oProdSoldPriceDataGridViewTextBoxColumn
-            // 
-            this.oProdSoldPriceDataGridViewTextBoxColumn.DataPropertyName = "OProd_SoldPrice";
-            this.oProdSoldPriceDataGridViewTextBoxColumn.HeaderText = "OProd_SoldPrice";
-            this.oProdSoldPriceDataGridViewTextBoxColumn.Name = "oProdSoldPriceDataGridViewTextBoxColumn";
-            // 
-            // orderProductBindingSource
-            // 
-            this.orderProductBindingSource.DataMember = "OrderProduct";
-            this.orderProductBindingSource.DataSource = this.group3DataSet;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -522,6 +515,14 @@ namespace StarMeatsPos
             this.orderBindingSource2.DataMember = "Order";
             this.orderBindingSource2.DataSource = this.group3DataSet;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(790, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(309, 603);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
             // orderTableAdapter
             // 
             this.orderTableAdapter.ClearBeforeFill = true;
@@ -575,13 +576,13 @@ namespace StarMeatsPos
             this.gbxOrderDetails.ResumeLayout(false);
             this.gbxOrderDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();

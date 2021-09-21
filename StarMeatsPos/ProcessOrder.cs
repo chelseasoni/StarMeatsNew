@@ -34,7 +34,8 @@ namespace StarMeatsPos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            double priceperunit = 0;
+            int q = 0;
                 
 
 
@@ -49,6 +50,8 @@ namespace StarMeatsPos
                         amountPaid = int.Parse(amtpaid.Trim());
                     }
 
+                    //DataGridViewRow k = dataGridView1.CurrentRow;
+
                     dataGridView2.Show();
                     saleTableAdapter1.Insert(Login.EmployeeID, int.Parse(textBox2.Text), DateAndTime.Now, DateAndTime.Now.TimeOfDay, decimal.Parse(textBox1.Text));
                     saleTableAdapter1.Fill(group3DataSet.Sale);
@@ -60,9 +63,12 @@ namespace StarMeatsPos
                     richTextBox1.AppendText(Environment.NewLine + DateAndTime.Now.ToString());
                     richTextBox1.AppendText(Environment.NewLine + "Cashier: " + Login.EmpName);
                     richTextBox1.AppendText(Environment.NewLine + "------------------------------------------------------------");
-                    for (int i = 0; i < group3DataSet.DataTable3.Rows.Count - 1; i++) {
+                    richTextBox1.AppendText(Environment.NewLine);
+                    for (int i = 0; i < group3DataSet.DataTable3.Rows.Count; i++) {
+                        priceperunit = Convert.ToDouble(group3DataSet.DataTable3.Rows[i].ItemArray[3]);
+                        q = Convert.ToInt16(group3DataSet.DataTable3.Rows[i].ItemArray[2]);
                         richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
-                        richTextBox1.AppendText(group3DataSet.DataTable3.Rows[i].ItemArray[4]+ " ("+ group3DataSet.DataTable3.Rows[i].ItemArray[2]+"@" +"R:"+ group3DataSet.DataTable3.Rows[i].ItemArray[3]+") R"+textBox1.Text + Environment.NewLine);
+                        richTextBox1.AppendText(group3DataSet.DataTable3.Rows[i].ItemArray[4]+ " ("+ group3DataSet.DataTable3.Rows[i].ItemArray[2]+"@" +"R:"+ group3DataSet.DataTable3.Rows[i].ItemArray[3]+") R"+( priceperunit*q )+ Environment.NewLine);
                     }
                     if (comboBox1.GetItemText(comboBox1.SelectedItem) == "Cash")
                     {
@@ -180,7 +186,8 @@ namespace StarMeatsPos
         private void dgvOrder_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox2.Text = dgvOrder.CurrentRow.Cells[1].Value.ToString();
-            
+
+            dataGridView1.Visible = true;
             this.orderProductTableAdapter.FillByorderid(this.group3DataSet.OrderProduct, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
             dataTable3TableAdapter1.Fillorderproduct(group3DataSet.DataTable3, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
             orderProductBindingSource.DataSource = orderProductTableAdapter.GetDataBy1(Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
