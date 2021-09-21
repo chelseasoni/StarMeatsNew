@@ -60,6 +60,7 @@ namespace StarMeatsPos
             if (custid.ToUpper() == "NEW")
             {
                 Form redirect = new Customers();
+                redirect.WindowState = FormWindowState.Maximized;
                 redirect.Show();
 
 
