@@ -38,14 +38,14 @@ namespace StarMeatsPos
 
             try
             {
-                MessageBox.Show("Hello, Mr. Chelsea. I have done a programming message here, can you see it?");
+                
                 if (Login.isManager == false)
                 {
                     dataTable1TableAdapter.NewOrdersEmployee(group3DataSet.DataTable1, Login.empID);
                 }
                 else
                 {
-                    this.dataTable1TableAdapter.Fill(this.group3DataSet.DataTable1);
+                    this.dataTable1TableAdapter.NewOrdersAll(this.group3DataSet.DataTable1);
                 }
             }
             catch
@@ -203,11 +203,11 @@ namespace StarMeatsPos
             {
                 if (Login.isManager == false)
                 {
-                    dataTable1TableAdapter.FillEmployee(group3DataSet.DataTable1, Login.empID);
+                    dataTable1TableAdapter.NewOrdersEmployee(group3DataSet.DataTable1, Login.empID);
                 }
                 else
                 {
-                    this.dataTable1TableAdapter.Fill(this.group3DataSet.DataTable1);
+                    this.dataTable1TableAdapter.NewOrdersAll(this.group3DataSet.DataTable1);
                 }
                 MessageBox.Show("List of orders has been refreshed.");
             }
