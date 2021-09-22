@@ -170,7 +170,11 @@ namespace StarMeatsPos
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            if (textBoxID.Text == "")
+            {
+                MessageBox.Show("Scan item first.");
+                return;
+            }
             {
                 decimalprice = 0;
                 textBoxName.Clear();
