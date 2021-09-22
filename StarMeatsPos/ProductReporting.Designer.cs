@@ -30,15 +30,15 @@ namespace StarMeatsPos
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.group3DataSet1 = new StarMeatsPos.group3DataSet();
             this.productTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.ProductTableAdapter();
             this.saleProductTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.SaleProductTableAdapter();
-            this.crystalReport22 = new StarMeatsPos.CrystalReport2();
-            this.crystalReport41 = new StarMeatsPos.CrystalReport4();
-            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.orderProductTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.OrderProductTableAdapter();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReport22 = new StarMeatsPos.CrystalReport2();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReport41 = new StarMeatsPos.CrystalReport4();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet1)).BeginInit();
             this.SuspendLayout();
@@ -51,18 +51,6 @@ namespace StarMeatsPos
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1101, 633);
             this.panel1.TabIndex = 0;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.crystalReport22;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1101, 633);
-            this.crystalReportViewer1.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -90,6 +78,22 @@ namespace StarMeatsPos
             // 
             this.saleProductTableAdapter1.ClearBeforeFill = true;
             // 
+            // orderProductTableAdapter1
+            // 
+            this.orderProductTableAdapter1.ClearBeforeFill = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ReportSource = this.crystalReport22;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1101, 633);
+            this.crystalReportViewer1.TabIndex = 0;
+            // 
             // crystalReportViewer2
             // 
             this.crystalReportViewer2.ActiveViewIndex = 0;
@@ -102,9 +106,9 @@ namespace StarMeatsPos
             this.crystalReportViewer2.Size = new System.Drawing.Size(1101, 633);
             this.crystalReportViewer2.TabIndex = 1;
             // 
-            // orderProductTableAdapter1
+            // crystalReport41
             // 
-            this.orderProductTableAdapter1.ClearBeforeFill = true;
+            this.crystalReport41.InitReport += new System.EventHandler(this.crystalReport41_InitReport);
             // 
             // ProductReporting
             // 
