@@ -19,46 +19,48 @@ namespace StarMeatsPos
 
         private void Help2_Load(object sender, EventArgs e)
         {
-           /* if (e.Node.Name == "Node0")
-            {
-                richTextBox2.Text = "Login Help";
-            }
-            if (e.Node.Name == "Node1")
-            {
-                richTextBox2.Text = "Processing a sale";
-            }
-            if (e.Node.Name == "Node2")
-            {
-                richTextBox2.Text = "Processing an order";
-            }
-            if (e.Node.Name == "Node3")
-            {
-                richTextBox2.Text = "Creating an order";
-            }
-            if (e.Node.Name == "Node4")
-            {
-                richTextBox2.Text = "Adding a new product";
-            }
-            if (e.Node.Name == "Node5")
-            {
-                richTextBox2.Text = "Updating a product";
-            }
-            if (e.Node.Name == "Node6")
-            {
-                richTextBox2.Text = "Viewing sales";
-            }
-            if (e.Node.Name == "Node7")
-            {
-                richTextBox2.Text = "Viewing orders";
-            }
-            if (e.Node.Name == "Node8")
-            {
-                richTextBox2.Text = "Viewing products";
-            }
-            if (e.Node.Name == "Node9")
-            {
-                richTextBox2.Text = "Generating a report";
-            }*/
+
+        
+            /* if (e.Node.Name == "Node0")
+             {
+                 richTextBox2.Text = "Login Help";
+             }
+             if (e.Node.Name == "Node1")
+             {
+                 richTextBox2.Text = "Processing a sale";
+             }
+             if (e.Node.Name == "Node2")
+             {
+                 richTextBox2.Text = "Processing an order";
+             }
+             if (e.Node.Name == "Node3")
+             {
+                 richTextBox2.Text = "Creating an order";
+             }
+             if (e.Node.Name == "Node4")
+             {
+                 richTextBox2.Text = "Adding a new product";
+             }
+             if (e.Node.Name == "Node5")
+             {
+                 richTextBox2.Text = "Updating a product";
+             }
+             if (e.Node.Name == "Node6")
+             {
+                 richTextBox2.Text = "Viewing sales";
+             }
+             if (e.Node.Name == "Node7")
+             {
+                 richTextBox2.Text = "Viewing orders";
+             }
+             if (e.Node.Name == "Node8")
+             {
+                 richTextBox2.Text = "Viewing products";
+             }
+             if (e.Node.Name == "Node9")
+             {
+                 richTextBox2.Text = "Generating a report";
+             }*/
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -67,6 +69,7 @@ namespace StarMeatsPos
             if (e.Node.Name == "Node0")
             {
                 richTextBox2.Text = "Login Help";
+                richTextBox2.Text = "\n\n 1.  Click on the text box next to the Username label to type in your username.\n\n 2.Click on the text box next to the Password label to type in your username. \n\n 3.Click Login to continue to the program functions. \n\n 4.Click Exit to close the program.";
             }
             if (e.Node.Name == "Node1")
             {
@@ -118,6 +121,11 @@ namespace StarMeatsPos
                 richTextBox2.Text = "Removing a Product from sale";
                 richTextBox2.Text = " \n\n 1. Click “Remove item from cart” " + Environment.NewLine + "\n 2. Enter in ID number of product to be removed" + Environment.NewLine + "\n 3. The quantity of that product present in the cart will be displayed.Enter the quantity you wish to remove ";
             }
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

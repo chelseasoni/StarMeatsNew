@@ -117,5 +117,11 @@ namespace StarMeatsPos
             }
             rtbDisplay.Refresh();
         }
+
+        private void SalesReporting_Load(object sender, EventArgs e)
+        {
+            webBrowser1.Refresh();
+            webBrowser1.Navigate("https://app.powerbi.com/view?r=eyJrIjoiN2FiYWM0MGQtYTRhZS00NGQ4LWE1NzYtMzBkYTRlOWVlMWU4IiwidCI6IjIyNjgyN2Q2LWE5ZDAtNDcwZC04YzE1LWIxNDZiMDE5MmQ1MSIsImMiOjh9&pageName=ReportSection");
+        }
     }
 }

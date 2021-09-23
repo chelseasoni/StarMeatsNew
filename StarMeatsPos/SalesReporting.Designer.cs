@@ -39,6 +39,7 @@ namespace StarMeatsPos
             this.tanumSales1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.tanumSales();
             this.taSalesReport1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.taSalesReport();
             this.label3 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@ namespace StarMeatsPos
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(417, 221);
+            this.label2.Location = new System.Drawing.Point(417, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 8;
@@ -67,7 +68,7 @@ namespace StarMeatsPos
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(141, 221);
+            this.label1.Location = new System.Drawing.Point(141, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 7;
@@ -76,7 +77,7 @@ namespace StarMeatsPos
             // toDatedtp
             // 
             this.toDatedtp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toDatedtp.Location = new System.Drawing.Point(420, 257);
+            this.toDatedtp.Location = new System.Drawing.Point(420, 90);
             this.toDatedtp.Name = "toDatedtp";
             this.toDatedtp.Size = new System.Drawing.Size(200, 22);
             this.toDatedtp.TabIndex = 6;
@@ -85,7 +86,7 @@ namespace StarMeatsPos
             // FromDatedtp
             // 
             this.FromDatedtp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FromDatedtp.Location = new System.Drawing.Point(144, 257);
+            this.FromDatedtp.Location = new System.Drawing.Point(144, 90);
             this.FromDatedtp.Name = "FromDatedtp";
             this.FromDatedtp.Size = new System.Drawing.Size(200, 22);
             this.FromDatedtp.TabIndex = 5;
@@ -114,11 +115,19 @@ namespace StarMeatsPos
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(138, 175);
+            this.label3.Location = new System.Drawing.Point(138, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 31);
             this.label3.TabIndex = 15;
             this.label3.Text = "Select a time frame";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(12, 252);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(735, 405);
+            this.webBrowser1.TabIndex = 16;
             // 
             // SalesReporting
             // 
@@ -126,6 +135,7 @@ namespace StarMeatsPos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1104, 682);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -136,6 +146,7 @@ namespace StarMeatsPos
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesReporting";
             this.Text = "Reports";
+            this.Load += new System.EventHandler(this.SalesReporting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,5 +165,6 @@ namespace StarMeatsPos
         private StarMeatsDataSetTableAdapters.tanumSales tanumSales1;
         private StarMeatsDataSetTableAdapters.taSalesReport taSalesReport1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

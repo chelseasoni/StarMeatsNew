@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>
+The following application is a Point of Sales System made to facilitate the day to day tasks of Star Meats. 
+
+The system handles the processing of sales, the processing of orders, viewable information about details such as the staff, customer and product details, maintenance procedures on products, customers and staff and also gives the manager/admin access to many reporting features.
+</value>
+  </data>
 </root>

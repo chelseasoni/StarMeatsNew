@@ -80,6 +80,10 @@ namespace StarMeatsPos
                     MessageBox.Show(underStockLevel);
                     sM.loadUser("Deena Murugan", "Manager");
                 }
+                else
+                {
+                    MessageBox.Show("invalid login");
+                }
 
             }
             else

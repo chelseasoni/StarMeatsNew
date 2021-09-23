@@ -16,6 +16,8 @@ namespace StarMeatsPos
     {
 
         public double amountPaid = 0;
+        public double Total = 0;
+        public double amountpaid = 0;
         public double change = 0;
         public ProcessOrder()
         {
@@ -46,8 +48,15 @@ namespace StarMeatsPos
                 {
                     if (comboBox1.GetItemText(comboBox1.SelectedItem) == "Cash")
                     {
-                        string amtpaid = (Interaction.InputBox("Enter amount paid: "));
-                        amountPaid = int.Parse(amtpaid.Trim());
+
+                        amountpaid = Convert.ToDouble(Interaction.InputBox("Amount Due " + String.Format("{0:C}", Total) + " | Enter paid amount:"));
+                        if (amountpaid < Total)
+                        {
+                            MessageBox.Show("Invalid. Please enter amount greater than " + String.Format("{0:C}", Total));
+                            return;
+                        }
+                        change = amountpaid - Total;
+                        MessageBox.Show("Change: " + String.Format("{0:C}", change));
                     }
 
                     //DataGridViewRow k = dataGridView1.CurrentRow;
@@ -163,7 +172,7 @@ namespace StarMeatsPos
             dgvOrder.ForeColor = Color.Black;
             
             // TODO: This line of code loads data into the 'group3DataSet.Order' table. You can move, or remove it, as needed.
-            this.orderTableAdapter.Fill(this.group3DataSet.Order);
+            this.orderTableAdapter.CompletedOrders(this.group3DataSet.Order);
 
         }
 
@@ -188,6 +197,12 @@ namespace StarMeatsPos
             textBox2.Text = dgvOrder.CurrentRow.Cells[1].Value.ToString();
 
             dataGridView1.Visible = true;
+            label2.Visible = true;
+            label4.Visible = true;
+            label3.Visible = true;
+            textBox1.Visible = true;
+            comboBox1.Visible = true;
+
             this.orderProductTableAdapter.FillByorderid(this.group3DataSet.OrderProduct, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
             dataTable3TableAdapter1.Fillorderproduct(group3DataSet.DataTable3, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
             orderProductBindingSource.DataSource = orderProductTableAdapter.GetDataBy1(Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
@@ -267,6 +282,14 @@ namespace StarMeatsPos
             textBox1.Text = " ";
 
             dataGridView2.Hide();
+
+            dataGridView1.Visible = false;
+            label2.Visible = false;
+            label4.Visible = false;
+            label3.Visible = false;
+            textBox1.Visible = false;
+            comboBox1.Visible = false;
+            button2.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -279,6 +302,19 @@ namespace StarMeatsPos
             catch (Exception e14)
             {
                 MessageBox.Show("Invalid Customer Name");
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String n = textBox4.Text;
+                orderTableAdapter.FillBy(group3DataSet.Order, n);
+            }
+            catch (Exception e14)
+            {
+                dgvOrder.Rows.Clear();
             }
         }
     }

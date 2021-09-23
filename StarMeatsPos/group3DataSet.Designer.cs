@@ -7603,7 +7603,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        Customer.Cust_Name, [Order].Order_Id, [Order].Customer_Id, [Order].Date, [Order].End_Date, [Order].Time, [Order].Total, [Order].Is_Fulfilled, [Order].in_progress, [Order].prepared
+            this._commandCollection[2].CommandText = @"SELECT        Customer.Cust_Name, [Order].Order_Id, [Order].Customer_Id, [Order].Date, [Order].End_Date, [Order].Time, [Order].Total, [Order].Is_Fulfilled, [Order].in_progress, [Order].prepared, [Order].Employee_Id
 FROM            [Order] INNER JOIN
                          Customer ON [Order].Customer_Id = Customer.Customer_Id
 WHERE        ([Order].prepared = 1) AND (Customer.Cust_Name = @cname)";

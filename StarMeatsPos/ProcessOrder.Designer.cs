@@ -136,6 +136,7 @@ namespace StarMeatsPos
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 22);
             this.textBox1.TabIndex = 6;
+            this.textBox1.Visible = false;
             // 
             // label4
             // 
@@ -145,6 +146,7 @@ namespace StarMeatsPos
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Total Due:";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -154,6 +156,7 @@ namespace StarMeatsPos
             this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Type of Payment:";
+            this.label3.Visible = false;
             // 
             // comboBox1
             // 
@@ -165,6 +168,7 @@ namespace StarMeatsPos
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
@@ -223,6 +227,7 @@ namespace StarMeatsPos
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(73, 22);
             this.textBox4.TabIndex = 23;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label1
             // 
@@ -425,6 +430,7 @@ namespace StarMeatsPos
             this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Order Products";
+            this.label2.Visible = false;
             // 
             // dgvOrder
             // 

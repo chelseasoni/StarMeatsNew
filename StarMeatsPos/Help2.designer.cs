@@ -29,6 +29,7 @@ namespace StarMeatsPos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help2));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Login ");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Processing a Sale");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Processing an Order");
@@ -98,7 +99,8 @@ namespace StarMeatsPos
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1066, 563);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // tabPage2
             // 
