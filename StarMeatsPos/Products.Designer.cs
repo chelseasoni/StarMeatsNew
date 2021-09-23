@@ -30,7 +30,6 @@ namespace StarMeatsPos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonViewProductsOnPromotion = new System.Windows.Forms.Button();
             this.buttonViewAllProducts = new System.Windows.Forms.Button();
             this.starMeatsDataSet = new StarMeatsPos.StarMeatsDataSet();
@@ -83,7 +82,7 @@ namespace StarMeatsPos
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupBoxProductDetails.SuspendLayout();
@@ -92,32 +91,18 @@ namespace StarMeatsPos
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.panel1.Controls.Add(this.buttonViewProductsOnPromotion);
-            this.panel1.Controls.Add(this.buttonViewAllProducts);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 682);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonViewProductsOnPromotion
             // 
-            this.buttonViewProductsOnPromotion.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonViewProductsOnPromotion.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonViewProductsOnPromotion.FlatAppearance.BorderSize = 0;
-            this.buttonViewProductsOnPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewProductsOnPromotion.ForeColor = System.Drawing.Color.Black;
-            this.buttonViewProductsOnPromotion.Location = new System.Drawing.Point(0, 55);
+            this.buttonViewProductsOnPromotion.Location = new System.Drawing.Point(8, 32);
             this.buttonViewProductsOnPromotion.Margin = new System.Windows.Forms.Padding(5);
             this.buttonViewProductsOnPromotion.Name = "buttonViewProductsOnPromotion";
-            this.buttonViewProductsOnPromotion.Size = new System.Drawing.Size(189, 55);
+            this.buttonViewProductsOnPromotion.Size = new System.Drawing.Size(184, 55);
             this.buttonViewProductsOnPromotion.TabIndex = 1;
             this.buttonViewProductsOnPromotion.Text = "Products on promotion";
             this.buttonViewProductsOnPromotion.UseVisualStyleBackColor = true;
@@ -125,15 +110,13 @@ namespace StarMeatsPos
             // 
             // buttonViewAllProducts
             // 
-            this.buttonViewAllProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonViewAllProducts.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonViewAllProducts.FlatAppearance.BorderSize = 0;
-            this.buttonViewAllProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewAllProducts.ForeColor = System.Drawing.Color.Black;
-            this.buttonViewAllProducts.Location = new System.Drawing.Point(0, 0);
+            this.buttonViewAllProducts.Location = new System.Drawing.Point(8, 107);
             this.buttonViewAllProducts.Margin = new System.Windows.Forms.Padding(5);
             this.buttonViewAllProducts.Name = "buttonViewAllProducts";
-            this.buttonViewAllProducts.Size = new System.Drawing.Size(189, 55);
+            this.buttonViewAllProducts.Size = new System.Drawing.Size(184, 55);
             this.buttonViewAllProducts.TabIndex = 0;
             this.buttonViewAllProducts.Text = "All products";
             this.buttonViewAllProducts.UseVisualStyleBackColor = true;
@@ -404,7 +387,7 @@ namespace StarMeatsPos
             // textBoxProductID
             // 
             this.textBoxProductID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxProductID.Location = new System.Drawing.Point(241, 411);
+            this.textBoxProductID.Location = new System.Drawing.Point(255, 411);
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(100, 23);
             this.textBoxProductID.TabIndex = 10;
@@ -413,7 +396,7 @@ namespace StarMeatsPos
             // 
             this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSearch.Location = new System.Drawing.Point(241, 449);
+            this.buttonSearch.Location = new System.Drawing.Point(255, 451);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(100, 33);
             this.buttonSearch.TabIndex = 11;
@@ -466,10 +449,10 @@ namespace StarMeatsPos
             this.dataGridViewTextBoxColumn9});
             this.productDataGridView.DataSource = this.productBindingSource2;
             this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productDataGridView.Location = new System.Drawing.Point(189, 0);
+            this.productDataGridView.Location = new System.Drawing.Point(0, 0);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.RowHeadersWidth = 51;
-            this.productDataGridView.Size = new System.Drawing.Size(915, 220);
+            this.productDataGridView.Size = new System.Drawing.Size(1104, 220);
             this.productDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -558,7 +541,7 @@ namespace StarMeatsPos
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(228, 523);
+            this.label10.Location = new System.Drawing.Point(252, 523);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(132, 17);
             this.label10.TabIndex = 12;
@@ -567,7 +550,7 @@ namespace StarMeatsPos
             // textboxproddescrip
             // 
             this.textboxproddescrip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textboxproddescrip.Location = new System.Drawing.Point(241, 558);
+            this.textboxproddescrip.Location = new System.Drawing.Point(255, 558);
             this.textboxproddescrip.Name = "textboxproddescrip";
             this.textboxproddescrip.Size = new System.Drawing.Size(100, 23);
             this.textboxproddescrip.TabIndex = 13;
@@ -622,12 +605,26 @@ namespace StarMeatsPos
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.buttonViewProductsOnPromotion);
+            this.groupBox2.Controls.Add(this.buttonViewAllProducts);
+            this.groupBox2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.Location = new System.Drawing.Point(22, 388);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 184);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filters";
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1104, 682);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textboxproddescrip);
@@ -641,13 +638,11 @@ namespace StarMeatsPos
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.buttonFirst);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Products";
             this.Text = "ViewProducts";
             this.Load += new System.EventHandler(this.ViewProducts_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.groupBoxProductDetails.ResumeLayout(false);
@@ -657,14 +652,13 @@ namespace StarMeatsPos
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonViewProductsOnPromotion;
         private System.Windows.Forms.Button buttonViewAllProducts;
         private StarMeatsDataSet starMeatsDataSet;
@@ -717,5 +711,6 @@ namespace StarMeatsPos
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
