@@ -25,6 +25,7 @@ namespace StarMeatsPos
             saleProductTableAdapter1.Fill(group3DataSet1.SaleProduct);
             orderProductTableAdapter1.Fill(group3DataSet1.OrderProduct);
             crystalReport22.SetDataSource(group3DataSet1);
+            crystalReport41.SetDataSource(group3DataSet1);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,6 +43,11 @@ namespace StarMeatsPos
         }
 
         private void crystalReport21_InitReport(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crystalReport41_InitReport(object sender, EventArgs e)
         {
 
         }

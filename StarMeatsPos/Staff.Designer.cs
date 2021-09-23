@@ -35,11 +35,12 @@ namespace StarMeatsPos
             this.employeeTableAdapter = new StarMeatsPos.StarMeatsDataSetTableAdapters.EmployeeTableAdapter();
             this.tableAdapterManager = new StarMeatsPos.StarMeatsDataSetTableAdapters.TableAdapterManager();
             this.groupBoxStaffDetails = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new StarMeatsPos.DataSet1();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.group3DataSet = new StarMeatsPos.group3DataSet();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -53,6 +54,9 @@ namespace StarMeatsPos
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.group3DataSet = new StarMeatsPos.group3DataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
@@ -76,8 +80,6 @@ namespace StarMeatsPos
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,19 +88,17 @@ namespace StarMeatsPos
             this.employeeRoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeePasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atWorkDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new StarMeatsPos.DataSet1();
             this.employeeTableAdapter2 = new StarMeatsPos.DataSet1TableAdapters.EmployeeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.groupBoxStaffDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // starMeatsDataSet
@@ -156,6 +156,35 @@ namespace StarMeatsPos
             this.groupBoxStaffDetails.TabStop = false;
             this.groupBoxStaffDetails.Text = "Staff Details";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(376, 159);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(154, 23);
+            this.textBox8.TabIndex = 21;
+            this.textBox8.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.employeeBindingSource2, "AtWork", true));
+            this.checkBox1.Location = new System.Drawing.Point(22, 245);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(77, 21);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "At Work";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // employeeBindingSource2
+            // 
+            this.employeeBindingSource2.DataMember = "Employee";
+            this.employeeBindingSource2.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -164,7 +193,7 @@ namespace StarMeatsPos
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(126, 33);
             this.button3.TabIndex = 19;
-            this.button3.Text = "Reload Table";
+            this.button3.Text = "Cancel Update";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -179,24 +208,6 @@ namespace StarMeatsPos
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource2, "Employee_Password", true));
-            this.textBox7.Location = new System.Drawing.Point(860, 211);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(154, 23);
-            this.textBox7.TabIndex = 9;
-            // 
-            // employeeBindingSource1
-            // 
-            this.employeeBindingSource1.DataMember = "Employee";
-            this.employeeBindingSource1.DataSource = this.group3DataSet;
-            // 
-            // group3DataSet
-            // 
-            this.group3DataSet.DataSetName = "group3DataSet";
-            this.group3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox6
             // 
@@ -316,6 +327,24 @@ namespace StarMeatsPos
             this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Surname";
+            // 
+            // textBox7
+            // 
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource2, "Employee_Password", true));
+            this.textBox7.Location = new System.Drawing.Point(860, 211);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(154, 23);
+            this.textBox7.TabIndex = 9;
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.group3DataSet;
+            // 
+            // group3DataSet
+            // 
+            this.group3DataSet.DataSetName = "group3DataSet";
+            this.group3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -571,25 +600,6 @@ namespace StarMeatsPos
             this.dataGridView1.Size = new System.Drawing.Size(1104, 234);
             this.dataGridView1.TabIndex = 19;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.employeeBindingSource2, "AtWork", true));
-            this.checkBox1.Location = new System.Drawing.Point(22, 245);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 21);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "At Work";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(376, 159);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(154, 23);
-            this.textBox8.TabIndex = 21;
-            this.textBox8.Visible = false;
-            // 
             // employeeIdDataGridViewTextBoxColumn
             // 
             this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "Employee_Id";
@@ -639,16 +649,6 @@ namespace StarMeatsPos
             this.atWorkDataGridViewCheckBoxColumn.HeaderText = "AtWork";
             this.atWorkDataGridViewCheckBoxColumn.Name = "atWorkDataGridViewCheckBoxColumn";
             // 
-            // employeeBindingSource2
-            // 
-            this.employeeBindingSource2.DataMember = "Employee";
-            this.employeeBindingSource2.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // employeeTableAdapter2
             // 
             this.employeeTableAdapter2.ClearBeforeFill = true;
@@ -683,13 +683,13 @@ namespace StarMeatsPos
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.groupBoxStaffDetails.ResumeLayout(false);
             this.groupBoxStaffDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

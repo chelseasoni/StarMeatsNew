@@ -606,7 +606,7 @@ namespace StarMeatsPos
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 33);
             this.button3.TabIndex = 17;
-            this.button3.Text = "Reload Table";
+            this.button3.Text = "Cancel Update";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

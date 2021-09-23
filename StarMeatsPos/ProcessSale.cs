@@ -60,7 +60,9 @@ namespace StarMeatsPos
             if (custid.ToUpper() == "NEW")
             {
                 Form redirect = new Customers();
+                redirect.WindowState = FormWindowState.Maximized;
                 redirect.Show();
+                return;
 
 
             }
@@ -169,7 +171,13 @@ namespace StarMeatsPos
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            if (textBoxID.Text == "")
+            {
+                MessageBox.Show("Scan item first.");
+                textBoxID.Focus();
+                return;
+                
+            }
             {
                 decimalprice = 0;
                 textBoxName.Clear();
@@ -241,12 +249,20 @@ namespace StarMeatsPos
 
         private void AddToOrderButton_Click(object sender, EventArgs e)
         {
+            
             {
                 if (textBoxID.Text == "")
                 {
                     MessageBox.Show("Select product to add to sale.");
                     textBoxQuantity.Text = "";
                     return;
+                }
+
+
+                {
+                    SaleProductGridView.Visible = true;
+                    groupBox2.Visible = true;
+
                 }
 
                 string t = "";
@@ -814,6 +830,11 @@ namespace StarMeatsPos
         }
 
         private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

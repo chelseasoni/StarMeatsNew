@@ -29,6 +29,7 @@ namespace StarMeatsPos
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbDisplay = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@ namespace StarMeatsPos
             this.tanumSales1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.tanumSales();
             this.taSalesReport1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.taSalesReport();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +132,10 @@ namespace StarMeatsPos
             this.webBrowser1.Size = new System.Drawing.Size(735, 405);
             this.webBrowser1.TabIndex = 16;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
             // SalesReporting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,5 +173,7 @@ namespace StarMeatsPos
         private StarMeatsDataSetTableAdapters.taSalesReport taSalesReport1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

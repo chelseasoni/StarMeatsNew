@@ -16,7 +16,10 @@ namespace StarMeatsPos
         {
             InitializeComponent();
             customizeDesign();
-
+            if (DateTime.Now.Hour < 7)
+            {
+                employeeTableAdapter1.UpdateAtWork();
+            }
             iconButtonSales.Enabled = false;
             iconButtonOrders.Enabled = false;
             iconButtonProducts.Enabled = false;

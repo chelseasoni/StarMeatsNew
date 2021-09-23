@@ -307,7 +307,7 @@ namespace StarMeatsPos
             this.buttonLast.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLast.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonLast.Location = new System.Drawing.Point(714, 8);
+            this.buttonLast.Location = new System.Drawing.Point(719, 8);
             this.buttonLast.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(118, 38);
@@ -321,7 +321,7 @@ namespace StarMeatsPos
             this.buttonNext.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonNext.Location = new System.Drawing.Point(575, 8);
+            this.buttonNext.Location = new System.Drawing.Point(580, 8);
             this.buttonNext.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(118, 38);
@@ -335,7 +335,7 @@ namespace StarMeatsPos
             this.buttonPrevious.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrevious.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonPrevious.Location = new System.Drawing.Point(418, 8);
+            this.buttonPrevious.Location = new System.Drawing.Point(423, 8);
             this.buttonPrevious.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(117, 38);
@@ -349,7 +349,7 @@ namespace StarMeatsPos
             this.buttonFirst.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFirst.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonFirst.Location = new System.Drawing.Point(279, 8);
+            this.buttonFirst.Location = new System.Drawing.Point(284, 8);
             this.buttonFirst.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(118, 38);
@@ -385,7 +385,7 @@ namespace StarMeatsPos
             this.panel2.Controls.Add(this.buttonNext);
             this.panel2.Location = new System.Drawing.Point(1, 174);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 59);
+            this.panel2.Size = new System.Drawing.Size(1138, 59);
             this.panel2.TabIndex = 22;
             // 
             // label2

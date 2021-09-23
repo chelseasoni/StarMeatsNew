@@ -129,57 +129,78 @@ namespace StarMeatsPos
             textBoxSellBy.Clear();
 
             //show available products on table
-            productTableAdapter.FillBy(starMeatsDataSet.Product, Convert.ToInt32(textBoxProductID.Text));
-            DataGridViewRow r3 = this.productDataGridView.CurrentRow;
-
-            //if no such product exists
-
-            if (productDataGridView.Rows.Count == 1)
+            // test surname
+            bool validSurname = true;
+            string test = textBoxProductID.Text;
+            if (String.IsNullOrEmpty(test))
             {
-                MessageBox.Show("No such product exists.");
+                validSurname = false;               
             }
-
-
-            //if a prodict does exist
-            else
+            for (int i = 0; i < test.Length; i++)
             {
-
-                textBoxID.Text = textBoxProductID.Text;
-                textBoxDescription.Text = r3.Cells["dataGridViewTextBoxColumn2"].Value.ToString();
-                textBoxCategory.Text = r3.Cells["dataGridViewTextBoxColumn3"].Value.ToString();
-                textBoxOnPromotion.Text =r3.Cells["dataGridViewCheckBoxColumn1"].Value.ToString();
-
-
-                textBoxSellBy.Text = r3.Cells["dataGridViewTextBoxColumn8"].Value.ToString();
-                textBoxReorder.Text = r3.Cells["dataGridViewTextBoxColumn9"].Value.ToString();
-
-                //special coding for quantity            
-                if (r3.Cells["dataGridViewTextBoxColumn6"].Value.ToString() == "")
+                if (char.IsLetter(test[i]))
                 {
-                    textBoxQuantity.Text = r3.Cells["dataGridViewTextBoxColumn7"].Value.ToString();
-
-
+                    validSurname = false;
                 }
+            }
+            if (!validSurname)
+            {
+                MessageBox.Show("Invalid Product");
+                textBoxProductID.Clear();
+            }
+            if (validSurname) {
+                productTableAdapter.FillBy(starMeatsDataSet.Product, Convert.ToInt32(textBoxProductID.Text));
+                DataGridViewRow r3 = this.productDataGridView.CurrentRow;
+
+                //if no such product exists
+
+                if (productDataGridView.Rows.Count == 1)
+                {
+                    MessageBox.Show("No such product exists.");
+                }
+
+
+                //if a product does exist
                 else
                 {
-                    textBoxQuantity.Text = r3.Cells["dataGridViewTextBoxColumn6"].Value.ToString();
+
+                    textBoxID.Text = textBoxProductID.Text;
+                    textBoxDescription.Text = r3.Cells["dataGridViewTextBoxColumn2"].Value.ToString();
+                    textBoxCategory.Text = r3.Cells["dataGridViewTextBoxColumn3"].Value.ToString();
+                    textBoxOnPromotion.Text = r3.Cells["dataGridViewCheckBoxColumn1"].Value.ToString();
+
+
+                    textBoxSellBy.Text = r3.Cells["dataGridViewTextBoxColumn8"].Value.ToString();
+                    textBoxReorder.Text = r3.Cells["dataGridViewTextBoxColumn9"].Value.ToString();
+
+                    //special coding for quantity            
+                    if (r3.Cells["dataGridViewTextBoxColumn6"].Value.ToString() == "")
+                    {
+                        textBoxQuantity.Text = r3.Cells["dataGridViewTextBoxColumn7"].Value.ToString();
+
+
+                    }
+                    else
+                    {
+                        textBoxQuantity.Text = r3.Cells["dataGridViewTextBoxColumn6"].Value.ToString();
+                    }
+
+
+                    //special coding for price
+                    //if per kg is blank
+                    if (r3.Cells["dataGridViewTextBoxColumn5"].Value.ToString() == "")
+                    {
+                        textBoxPrice.Text = r3.Cells["dataGridViewTextBoxColumn4"].Value.ToString();
+
+
+                    }
+                    else
+                    {
+                        textBoxPrice.Text = r3.Cells["dataGridViewTextBoxColumn5"].Value.ToString();
+                    }
+
+
                 }
-
-
-                //special coding for price
-                //if per kg is blank
-                if (r3.Cells["dataGridViewTextBoxColumn5"].Value.ToString() == "")
-                {
-                    textBoxPrice.Text = r3.Cells["dataGridViewTextBoxColumn4"].Value.ToString();
-
-
-                }
-                else
-                {
-                    textBoxPrice.Text = r3.Cells["dataGridViewTextBoxColumn5"].Value.ToString();
-                }
-
-
             }
 
 

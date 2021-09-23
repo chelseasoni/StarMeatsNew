@@ -44,14 +44,16 @@ namespace StarMeatsPos
             this.groupBoxStaffDetails = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.group3DataSet = new StarMeatsPos.group3DataSet();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBoxContact = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@ namespace StarMeatsPos
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.starMeatsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.groupBoxStaffDetails.SuspendLayout();
@@ -246,19 +246,21 @@ namespace StarMeatsPos
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(156, 41);
             this.buttonClear.TabIndex = 30;
-            this.buttonClear.Text = "Reset Table";
+            this.buttonClear.Text = "Cancel Update";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // textBox6
+            // textBoxPassword
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource1, "Cust_Email", true));
-            this.textBox6.Location = new System.Drawing.Point(403, 35);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(156, 23);
-            this.textBox6.TabIndex = 13;
+            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource1, "Cust_Password", true));
+            this.textBoxPassword.Location = new System.Drawing.Point(403, 80);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(156, 23);
+            this.textBoxPassword.TabIndex = 9;
+            this.textBoxPassword.Visible = false;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // customerBindingSource1
             // 
@@ -269,6 +271,16 @@ namespace StarMeatsPos
             // 
             this.group3DataSet.DataSetName = "group3DataSet";
             this.group3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource1, "Cust_Email", true));
+            this.textBox6.Location = new System.Drawing.Point(403, 35);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(156, 23);
+            this.textBox6.TabIndex = 13;
             // 
             // textBoxContact
             // 
@@ -321,6 +333,19 @@ namespace StarMeatsPos
             this.label1.Size = new System.Drawing.Size(21, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label8.Location = new System.Drawing.Point(289, 83);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Password";
+            this.label8.Visible = false;
             // 
             // label2
             // 
@@ -375,12 +400,12 @@ namespace StarMeatsPos
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.Enabled = false;
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAdd.Location = new System.Drawing.Point(7, 187);
+            this.buttonAdd.Location = new System.Drawing.Point(7, 151);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(138, 41);
+            this.buttonAdd.Size = new System.Drawing.Size(199, 41);
             this.buttonAdd.TabIndex = 29;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "Add New Customer";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -499,7 +524,7 @@ namespace StarMeatsPos
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(862, 346);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(152, 303);
+            this.groupBox1.Size = new System.Drawing.Size(213, 303);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Customer";
@@ -508,39 +533,14 @@ namespace StarMeatsPos
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(7, 94);
+            this.button2.Location = new System.Drawing.Point(7, 71);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 41);
+            this.button2.Size = new System.Drawing.Size(199, 41);
             this.button2.TabIndex = 30;
-            this.button2.Text = "Clear Fields";
+            this.button2.Text = "Enter New Customer Details";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label8.Location = new System.Drawing.Point(289, 83);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 17);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Password";
-            this.label8.Visible = false;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource1, "Cust_Password", true));
-            this.textBoxPassword.Location = new System.Drawing.Point(403, 80);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(156, 23);
-            this.textBoxPassword.TabIndex = 9;
-            this.textBoxPassword.Visible = false;
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // Customers
             // 
