@@ -110,8 +110,17 @@ namespace StarMeatsPos
                 employeeBindingSource1.MoveNext();
 
             }
-            comboBox1.SelectedIndex = 0;
-
+            buttonAdd.Enabled = true;
+            buttonRemoveFromSale.Enabled = true;
+            try
+            {
+                comboBox1.SelectedIndex = 0;
+            } catch (Exception e7)
+            {
+                MessageBox.Show("No employees are at work");
+                buttonAdd.Enabled = false;
+                buttonRemoveFromSale.Enabled = false;
+            }
 
         }
         private decimal total = 0;
