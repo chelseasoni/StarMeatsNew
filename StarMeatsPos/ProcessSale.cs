@@ -42,57 +42,13 @@ namespace StarMeatsPos
             //  {
             //    MessageBox.Show("A previous sale may not have been entered in correctly. Please contact IT technican");
             //}
-            int employeeID = Login.EmployeeID;
-            int empid = employeeID;
+         
+            newsale();
 
 
 
 
-            //is there a customer number for this sale
-
-            custid = (Interaction.InputBox("Enter Customer ID: "));
-
-            empname = Login.EmpName;
-
-            //create new order
-
-
-            if (custid.ToUpper() == "NEW")
-            {
-                Form redirect = new Customers();
-                redirect.WindowState = FormWindowState.Maximized;
-                redirect.Show();
-                return;
-
-
-            }
-
-
-            //if there is a customer associated 
-            try
-            {
-                int custid1 = Convert.ToInt32(custid);
-                saleTableAdapter.Insert(empid, custid1, dt, dt2, 0);
-
-            }
-            catch
-            {
-                //if no customer id was entered
-                if (custid == "")
-                {
-                    saleTableAdapter.Insert(empid, null, dt, dt2, 0); ;
-
-                }
-
-                else
-                {
-                    MessageBox.Show("Customer does not exist. Try again");
-
-                }
-            }
-
-            //show new sale
-            this.saleTableAdapter.FillBy4(this.starMeatsDataSet.Sale, dt);
+            
 
             //this.saleTableAdapter.FillBy2(this.starMeatsDataSet.Sale, dt, dt2.ToString());
 
@@ -112,6 +68,87 @@ namespace StarMeatsPos
 
         }
 
+        private void newsale()
+        {
+            //is there a customer number for this sale
+            int employeeID = Login.EmployeeID;
+            int empid = employeeID;
+            custid = (Interaction.InputBox("Enter Customer ID: "));
+
+            empname = Login.EmpName;
+
+            //create new order
+
+
+            if (custid.ToUpper() == "NEW")
+            {
+
+
+                accessnewform();
+
+            }
+
+            else
+            {
+                //if there is a customer associated 
+                try
+                {
+                    int custid1 = Convert.ToInt32(custid);
+                    saleTableAdapter.Insert(empid, custid1, dt, dt2, 0);
+
+                }
+                catch
+                {
+                    //if no customer id was entered
+                    if (custid == "")
+                    {
+                        saleTableAdapter.Insert(empid, null, dt, dt2, 0); ;
+
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Customer does not exist. Try again");
+
+                    }
+                }
+
+                //show new sale
+                this.saleTableAdapter.FillBy4(this.starMeatsDataSet.Sale, dt);
+
+            }
+        }
+        private void accessnewform()
+        {
+            
+            string managerpass = (Interaction.InputBox("Manager Authorization Password"));
+
+            
+               
+
+            if ((managerpass) != "")
+            {
+                if ((managerpass) == "DM123456")
+                {
+                    Form redirect = new Customers();
+                    redirect.WindowState = FormWindowState.Maximized;
+                    redirect.Show();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid password. Try again");
+                    accessnewform();
+                }
+             }
+            else {
+
+                newsale();
+                ;
+                
+                }
+           
+        }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
