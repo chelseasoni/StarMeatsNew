@@ -839,6 +839,11 @@ namespace StarMeatsPos
 
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("\n\n 1. Click on process sale" + Environment.NewLine + "\n 2. Enter in customer ID number.If they are not a registered customer, click cancel." + Environment.NewLine + "\n 3. Enter in ID of product you wish to add to the sale. " + Environment.NewLine + "\n 4. Click “search” " + Environment.NewLine + "\n 5. Enter in the desired quantity " + Environment.NewLine + "\n 6. Click “add product to cart” " + Environment.NewLine + "\n 7. Repeat steps 3 to 5 for each product" + Environment.NewLine + "\n 8. Select the payment type" + Environment.NewLine + "\n 9. Click “Process Sale”" + Environment.NewLine + "  9.1. Click “yes” to confirm sale" + Environment.NewLine + "  9.2. If sale is cash, enter in received amount and dispense displayed change." + Environment.NewLine + "\n 10. Click “generate receipt”");
+        }
+
         private void receiptrichTextBox_TextChanged(object sender, EventArgs e)
         {
 

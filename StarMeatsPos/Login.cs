@@ -176,6 +176,11 @@ namespace StarMeatsPos
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\n\n 1.  Click on the text box next to the Username label to type in your username.\n\n 2.Click on the text box next to the Password label to type in your username. \n\n 3.Click Login to continue to the program functions. \n\n 4.Click Exit to close the program.");
+        }
+
         public static string EmpName
         {
             get

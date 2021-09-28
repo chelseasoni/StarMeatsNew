@@ -97,6 +97,7 @@ namespace StarMeatsPos
             this.saleTableAdapter = new StarMeatsPos.StarMeatsDataSetTableAdapters.SaleTableAdapter();
             this.customerTableAdapter1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.CustomerTableAdapter();
             this.paymentTableAdapter1 = new StarMeatsPos.StarMeatsDataSetTableAdapters.PaymentTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet)).BeginInit();
@@ -118,7 +119,7 @@ namespace StarMeatsPos
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(22, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Product ID";
             // 
@@ -129,7 +130,7 @@ namespace StarMeatsPos
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(453, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 20);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Product Price";
             // 
@@ -140,7 +141,7 @@ namespace StarMeatsPos
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(453, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Product Name";
             // 
@@ -151,7 +152,7 @@ namespace StarMeatsPos
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(22, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.Size = new System.Drawing.Size(114, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Product Quantity";
             // 
@@ -160,7 +161,7 @@ namespace StarMeatsPos
             this.textBoxID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxID.Location = new System.Drawing.Point(171, 117);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(164, 26);
+            this.textBoxID.Size = new System.Drawing.Size(164, 23);
             this.textBoxID.TabIndex = 5;
             this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
@@ -169,7 +170,7 @@ namespace StarMeatsPos
             this.textBoxQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxQuantity.Location = new System.Drawing.Point(171, 170);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(164, 26);
+            this.textBoxQuantity.Size = new System.Drawing.Size(164, 23);
             this.textBoxQuantity.TabIndex = 6;
             // 
             // textBoxPrice
@@ -178,7 +179,7 @@ namespace StarMeatsPos
             this.textBoxPrice.Location = new System.Drawing.Point(602, 170);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.ReadOnly = true;
-            this.textBoxPrice.Size = new System.Drawing.Size(164, 26);
+            this.textBoxPrice.Size = new System.Drawing.Size(164, 23);
             this.textBoxPrice.TabIndex = 7;
             // 
             // textBoxName
@@ -187,7 +188,7 @@ namespace StarMeatsPos
             this.textBoxName.Location = new System.Drawing.Point(602, 122);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(164, 26);
+            this.textBoxName.Size = new System.Drawing.Size(164, 23);
             this.textBoxName.TabIndex = 8;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -406,7 +407,7 @@ namespace StarMeatsPos
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(453, 267);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Total:";
             // 
@@ -416,7 +417,7 @@ namespace StarMeatsPos
             this.textboxTotal.Location = new System.Drawing.Point(602, 264);
             this.textboxTotal.Name = "textboxTotal";
             this.textboxTotal.ReadOnly = true;
-            this.textboxTotal.Size = new System.Drawing.Size(164, 26);
+            this.textboxTotal.Size = new System.Drawing.Size(164, 23);
             this.textboxTotal.TabIndex = 17;
             // 
             // label6
@@ -426,7 +427,7 @@ namespace StarMeatsPos
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(453, 222);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
+            this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 18;
             this.label6.Text = "Subtotal";
             // 
@@ -436,7 +437,7 @@ namespace StarMeatsPos
             this.textboxsubtotal.Location = new System.Drawing.Point(602, 216);
             this.textboxsubtotal.Name = "textboxsubtotal";
             this.textboxsubtotal.ReadOnly = true;
-            this.textboxsubtotal.Size = new System.Drawing.Size(164, 26);
+            this.textboxsubtotal.Size = new System.Drawing.Size(164, 23);
             this.textboxsubtotal.TabIndex = 19;
             // 
             // saleGridView
@@ -526,7 +527,7 @@ namespace StarMeatsPos
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(19, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 20);
+            this.label7.Size = new System.Drawing.Size(107, 17);
             this.label7.TabIndex = 21;
             this.label7.Text = "Payment Type: ";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -540,7 +541,7 @@ namespace StarMeatsPos
             "Cash"});
             this.PaymentComboBox.Location = new System.Drawing.Point(159, 35);
             this.PaymentComboBox.Name = "PaymentComboBox";
-            this.PaymentComboBox.Size = new System.Drawing.Size(121, 28);
+            this.PaymentComboBox.Size = new System.Drawing.Size(121, 24);
             this.PaymentComboBox.TabIndex = 23;
             this.PaymentComboBox.SelectedIndexChanged += new System.EventHandler(this.PaymentComboBox_SelectedIndexChanged);
             // 
@@ -577,7 +578,7 @@ namespace StarMeatsPos
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(12, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.Size = new System.Drawing.Size(64, 16);
             this.label8.TabIndex = 26;
             this.label8.Text = "Products:";
             // 
@@ -589,7 +590,7 @@ namespace StarMeatsPos
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(9, 308);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 20);
+            this.label9.Size = new System.Drawing.Size(42, 16);
             this.label9.TabIndex = 27;
             this.label9.Text = "Sale: ";
             // 
@@ -601,7 +602,7 @@ namespace StarMeatsPos
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(9, 407);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 20);
+            this.label10.Size = new System.Drawing.Size(95, 16);
             this.label10.TabIndex = 28;
             this.label10.Text = "Sale Products:";
             // 
@@ -691,9 +692,9 @@ namespace StarMeatsPos
             // 
             this.CancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CancelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CancelButton.Location = new System.Drawing.Point(636, 612);
+            this.CancelButton.Location = new System.Drawing.Point(636, 592);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(130, 45);
+            this.CancelButton.Size = new System.Drawing.Size(130, 37);
             this.CancelButton.TabIndex = 26;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -711,12 +712,25 @@ namespace StarMeatsPos
             // 
             this.paymentTableAdapter1.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(636, 633);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 37);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Help";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // ProcessSale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1104, 682);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
@@ -831,6 +845,7 @@ namespace StarMeatsPos
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Button CancelButton;
+        private Button button2;
         //  private DataGridViewCellEventHandler SaleProductGridView_CellContentClick;
     }
 }

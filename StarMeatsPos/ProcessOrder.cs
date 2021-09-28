@@ -317,5 +317,10 @@ namespace StarMeatsPos
                 dgvOrder.Rows.Clear();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\n\n 1. Navigate to Sale, then select process order. \n\n 2. Double click the desired order. The products associated with the selected order will be listed on the table in the middle of the screen.\n\n 3. The total due will be displayed in the bottom left corner of the screen \n 3.1 select the preferred method of payment using the drop down arrow located under the total due textbox. \n\n 4. Click “confirm order” to finish off the order. The receipt will be displayed on the right side of the screen.");
+        }
     }
 }
