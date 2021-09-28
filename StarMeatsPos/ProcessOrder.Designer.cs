@@ -31,6 +31,7 @@ namespace StarMeatsPos
         {
             this.components = new System.ComponentModel.Container();
             this.gbxProcessOrder = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,7 +87,7 @@ namespace StarMeatsPos
             this.paymentTableAdapter = new StarMeatsPos.group3DataSetTableAdapters.PaymentTableAdapter();
             this.saleTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.SaleTableAdapter();
             this.dataTable3TableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.DataTable3TableAdapter();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.gbxProcessOrder.SuspendLayout();
             this.gbxOrderDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -118,6 +119,19 @@ namespace StarMeatsPos
             this.gbxProcessOrder.TabIndex = 5;
             this.gbxProcessOrder.TabStop = false;
             this.gbxProcessOrder.Text = "Process Order";
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(642, 40);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(131, 37);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Help";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -188,6 +202,7 @@ namespace StarMeatsPos
             // 
             // gbxOrderDetails
             // 
+            this.gbxOrderDetails.Controls.Add(this.button7);
             this.gbxOrderDetails.Controls.Add(this.button4);
             this.gbxOrderDetails.Controls.Add(this.textBox4);
             this.gbxOrderDetails.Controls.Add(this.label1);
@@ -565,18 +580,16 @@ namespace StarMeatsPos
             // 
             this.dataTable3TableAdapter1.ClearBeforeFill = true;
             // 
-            // button6
+            // button7
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(642, 40);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(131, 37);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Help";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(15, 234);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "Refresh";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // ProcessOrder
             // 
@@ -669,5 +682,6 @@ namespace StarMeatsPos
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

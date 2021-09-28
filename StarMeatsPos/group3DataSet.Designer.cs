@@ -7613,14 +7613,15 @@ WHERE        ([Order].prepared = 1) AND (Customer.Cust_Name = @cname)";
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
                 "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Custom" +
-                "er_Id = @custid) AND (prepared = 1)";
+                "er_Id = @custid) AND (prepared = 1) AND (Is_Fulfilled = 0) AND (in_progress = 0)" +
+                "";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@custid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT        Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is" +
                 "_Fulfilled, in_progress, prepared\r\nFROM            [Order]\r\nWHERE        (Order_" +
-                "Id = @ID) AND (prepared = 1)";
+                "Id = @ID) AND (prepared = 1) AND (in_progress = 0) AND (Is_Fulfilled = 0)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
