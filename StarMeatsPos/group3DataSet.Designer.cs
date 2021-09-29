@@ -7606,7 +7606,7 @@ SELECT Order_Id, Customer_Id, Date, End_Date, Time, Employee_Id, Total, Is_Fulfi
             this._commandCollection[2].CommandText = @"SELECT        Customer.Cust_Name, [Order].Order_Id, [Order].Customer_Id, [Order].Date, [Order].End_Date, [Order].Time, [Order].Total, [Order].Is_Fulfilled, [Order].in_progress, [Order].prepared, [Order].Employee_Id
 FROM            [Order] INNER JOIN
                          Customer ON [Order].Customer_Id = Customer.Customer_Id
-WHERE        ([Order].prepared = 1) AND (Customer.Cust_Name = @cname)";
+WHERE        ([Order].prepared = 1) AND (Customer.Cust_Name = @cname) AND ([Order].in_progress = 0) AND ([Order].Is_Fulfilled = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cname", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Cust_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
