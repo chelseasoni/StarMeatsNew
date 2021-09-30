@@ -175,6 +175,7 @@ namespace StarMeatsPos
             this.ProductDetails.Location = new System.Drawing.Point(274, 44);
             this.ProductDetails.Multiline = true;
             this.ProductDetails.Name = "ProductDetails";
+            this.ProductDetails.ReadOnly = true;
             this.ProductDetails.Size = new System.Drawing.Size(358, 212);
             this.ProductDetails.TabIndex = 26;
             // 
@@ -183,6 +184,7 @@ namespace StarMeatsPos
             this.cust_SurnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Cust_Surname", true));
             this.cust_SurnameTextBox.Location = new System.Drawing.Point(127, 168);
             this.cust_SurnameTextBox.Name = "cust_SurnameTextBox";
+            this.cust_SurnameTextBox.ReadOnly = true;
             this.cust_SurnameTextBox.Size = new System.Drawing.Size(141, 23);
             this.cust_SurnameTextBox.TabIndex = 25;
             // 
@@ -201,6 +203,7 @@ namespace StarMeatsPos
             this.cust_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Cust_Name", true));
             this.cust_NameTextBox.Location = new System.Drawing.Point(127, 127);
             this.cust_NameTextBox.Name = "cust_NameTextBox";
+            this.cust_NameTextBox.ReadOnly = true;
             this.cust_NameTextBox.Size = new System.Drawing.Size(141, 23);
             this.cust_NameTextBox.TabIndex = 24;
             // 
@@ -209,6 +212,7 @@ namespace StarMeatsPos
             this.customer_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Customer_Id", true));
             this.customer_IdTextBox.Location = new System.Drawing.Point(127, 85);
             this.customer_IdTextBox.Name = "customer_IdTextBox";
+            this.customer_IdTextBox.ReadOnly = true;
             this.customer_IdTextBox.Size = new System.Drawing.Size(141, 23);
             this.customer_IdTextBox.TabIndex = 23;
             // 
@@ -217,6 +221,7 @@ namespace StarMeatsPos
             this.order_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Order_Id", true));
             this.order_IdTextBox.Location = new System.Drawing.Point(127, 47);
             this.order_IdTextBox.Name = "order_IdTextBox";
+            this.order_IdTextBox.ReadOnly = true;
             this.order_IdTextBox.Size = new System.Drawing.Size(141, 23);
             this.order_IdTextBox.TabIndex = 22;
             // 
@@ -464,6 +469,7 @@ namespace StarMeatsPos
             this.dataGridView1.DataSource = this.dataTable1BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 27);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1138, 150);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -480,60 +486,70 @@ namespace StarMeatsPos
             this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "Customer_Id";
             this.customerIdDataGridViewTextBoxColumn.HeaderText = "Customer_Id";
             this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            this.customerIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // custNameDataGridViewTextBoxColumn
             // 
             this.custNameDataGridViewTextBoxColumn.DataPropertyName = "Cust_Name";
             this.custNameDataGridViewTextBoxColumn.HeaderText = "Cust_Name";
             this.custNameDataGridViewTextBoxColumn.Name = "custNameDataGridViewTextBoxColumn";
+            this.custNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // custSurnameDataGridViewTextBoxColumn
             // 
             this.custSurnameDataGridViewTextBoxColumn.DataPropertyName = "Cust_Surname";
             this.custSurnameDataGridViewTextBoxColumn.HeaderText = "Cust_Surname";
             this.custSurnameDataGridViewTextBoxColumn.Name = "custSurnameDataGridViewTextBoxColumn";
+            this.custSurnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // endDateDataGridViewTextBoxColumn
             // 
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "End_Date";
             this.endDateDataGridViewTextBoxColumn.HeaderText = "End_Date";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // timeDataGridViewTextBoxColumn
             // 
             this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
             this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
             this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "Employee_Id";
             this.employeeIdDataGridViewTextBoxColumn.HeaderText = "Employee_Id";
             this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            this.employeeIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // inprogressDataGridViewCheckBoxColumn
             // 
             this.inprogressDataGridViewCheckBoxColumn.DataPropertyName = "in_progress";
             this.inprogressDataGridViewCheckBoxColumn.HeaderText = "in_progress";
             this.inprogressDataGridViewCheckBoxColumn.Name = "inprogressDataGridViewCheckBoxColumn";
+            this.inprogressDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // preparedDataGridViewCheckBoxColumn
             // 
             this.preparedDataGridViewCheckBoxColumn.DataPropertyName = "prepared";
             this.preparedDataGridViewCheckBoxColumn.HeaderText = "prepared";
             this.preparedDataGridViewCheckBoxColumn.Name = "preparedDataGridViewCheckBoxColumn";
+            this.preparedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // isFulfilledDataGridViewCheckBoxColumn
             // 
             this.isFulfilledDataGridViewCheckBoxColumn.DataPropertyName = "Is_Fulfilled";
             this.isFulfilledDataGridViewCheckBoxColumn.HeaderText = "Is_Fulfilled";
             this.isFulfilledDataGridViewCheckBoxColumn.Name = "isFulfilledDataGridViewCheckBoxColumn";
+            this.isFulfilledDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // order_IdTextBox1
             // 
@@ -559,6 +575,7 @@ namespace StarMeatsPos
             this.dataGridView2.DataSource = this.dataTable2BindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(1, 257);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(1164, 150);
             this.dataGridView2.TabIndex = 31;
             // 
@@ -567,24 +584,28 @@ namespace StarMeatsPos
             this.orderIdDataGridViewTextBoxColumn1.DataPropertyName = "Order_Id";
             this.orderIdDataGridViewTextBoxColumn1.HeaderText = "Order_Id";
             this.orderIdDataGridViewTextBoxColumn1.Name = "orderIdDataGridViewTextBoxColumn1";
+            this.orderIdDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // prodIdDataGridViewTextBoxColumn
             // 
             this.prodIdDataGridViewTextBoxColumn.DataPropertyName = "Prod_Id";
             this.prodIdDataGridViewTextBoxColumn.HeaderText = "Prod_Id";
             this.prodIdDataGridViewTextBoxColumn.Name = "prodIdDataGridViewTextBoxColumn";
+            this.prodIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // prodDescriptionDataGridViewTextBoxColumn
             // 
             this.prodDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Prod_Description";
             this.prodDescriptionDataGridViewTextBoxColumn.HeaderText = "Prod_Description";
             this.prodDescriptionDataGridViewTextBoxColumn.Name = "prodDescriptionDataGridViewTextBoxColumn";
+            this.prodDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oProdQuantityDataGridViewTextBoxColumn
             // 
             this.oProdQuantityDataGridViewTextBoxColumn.DataPropertyName = "OProd_Quantity";
             this.oProdQuantityDataGridViewTextBoxColumn.HeaderText = "OProd_Quantity";
             this.oProdQuantityDataGridViewTextBoxColumn.Name = "oProdQuantityDataGridViewTextBoxColumn";
+            this.oProdQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataTable2BindingSource
             // 
