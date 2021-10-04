@@ -51,34 +51,42 @@ namespace StarMeatsPos
             {
                 if (pass == "DM123456")
                 {
-                    String underStockLevel = "Product under restock level :\r\n";
-                    this.productBindingSource.MoveFirst();
-                    //
-                    foreach (DataRow row in group3DataSet.Product.Rows)
+                    try
                     {
-                        DataRowView current = (DataRowView)this.productBindingSource.Current;
-                        if (current["Prod_Category"].Equals("Butchery Meat") && (Convert.ToInt32(current["Prod_Id"]) != 31) || (Convert.ToInt32(current["Prod_Id"]) == 50))
+                        String underStockLevel = "Product under restock level :\r\n";
+                        this.productBindingSource.MoveFirst();
+                        //
+                        foreach (DataRow row in group3DataSet.Product.Rows)
                         {
-                            if (Convert.ToDouble(current["Prod_Quantity_Available_kg"]) <= Convert.ToInt32(current["Reorder_level"]))
+                            DataRowView current = (DataRowView)this.productBindingSource.Current;
+                            if (current["Prod_Category"].Equals("Butchery Meat") && (Convert.ToInt32(current["Prod_Id"]) != 31) || (Convert.ToInt32(current["Prod_Id"]) == 50))
                             {
-                                underStockLevel += current["Prod_Description"] + "\r\n";
+                                if (Convert.ToDouble(current["Prod_Quantity_Available_kg"]) <= Convert.ToInt32(current["Reorder_level"]))
+                                {
+                                    underStockLevel += current["Prod_Description"] + "\r\n";
+                                }
                             }
-                        }
-                        else
-                        {
-                            if (Convert.ToDouble(current["Prod_Quantity_Available_unit"]) <= Convert.ToInt32(current["Reorder_level"]))
+                            else
                             {
-                                underStockLevel += current["Prod_Description"] + "\r\n";
+                                if (Convert.ToDouble(current["Prod_Quantity_Available_unit"]) <= Convert.ToInt32(current["Reorder_level"]))
+                                {
+                                    underStockLevel += current["Prod_Description"] + "\r\n";
+                                }
                             }
+                            productBindingSource.MoveNext();
                         }
-                        productBindingSource.MoveNext();
+                        StarMeats.ActiveForm.Hide();
+                        StarMeats sM = new StarMeats("Manager");
+                        isManager = true;
+                        sM.Show();
+                        MessageBox.Show(underStockLevel);
+                        sM.loadUser("Deena Murugan", "Manager");
                     }
-                    StarMeats.ActiveForm.Hide();
-                    StarMeats sM = new StarMeats("Manager");
-                    isManager = true;
-                    sM.Show();
-                    MessageBox.Show(underStockLevel);
-                    sM.loadUser("Deena Murugan", "Manager");
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Connection to database failed");
+                    }
+                    
                 }
                 else
                 {
@@ -112,36 +120,44 @@ namespace StarMeatsPos
                     lName = name.Substring(numPos + 1);
                     fName = name.Substring(0, (numPos2));
 
-                    SqlConnection sqlcon = new SqlConnection(@"Data Source=146.230.177.46\ist3;Initial Catalog=group3;User ID=group3;Password=r732k");
-                    string q1 = "select * from Employee Where Employee_Id ='" + empID + "' and Employee_Name='" + fName + "'and Employee_Surname='" + lName + "' and Employee_Password ='" + pass + "'";
-                    SqlDataAdapter sda = new SqlDataAdapter(q1, sqlcon);
-                    DataTable dtbl = new DataTable();
-                    sda.Fill(dtbl);
-                    if (dtbl.Rows.Count == 1)
+                    try
                     {
-
-                        string q2 = "select Employee_Role from Employee Where Employee_Id ='" + empID + "'";
-                        SqlCommand cmd1 = new SqlCommand(q2, sqlcon);
-
-                        SqlDataReader emp_role = null;
-                        sqlcon.Open();
-                        emp_role = cmd1.ExecuteReader();
-
-                        while (emp_role.Read())
+                        SqlConnection sqlcon = new SqlConnection(@"Data Source=146.230.177.46\ist3;Initial Catalog=group3;User ID=group3;Password=r732k");
+                        string q1 = "select * from Employee Where Employee_Id ='" + empID + "' and Employee_Name='" + fName + "'and Employee_Surname='" + lName + "' and Employee_Password ='" + pass + "'";
+                        SqlDataAdapter sda = new SqlDataAdapter(q1, sqlcon);
+                        DataTable dtbl = new DataTable();
+                        sda.Fill(dtbl);
+                        if (dtbl.Rows.Count == 1)
                         {
-                            emp_r = emp_role["Employee_Role"].ToString();
-                        }
 
-                        sqlcon.Close();
-                        isManager = false;
-                        StarMeats.ActiveForm.Hide();
-                        StarMeats s = new StarMeats(emp_r);
-                        s.Show();
-                        employeeTableAdapter1.FillEmployee(group3DataSet.Employee, Login.empID);
-                        s.loadUser(group3DataSet.Employee.Rows[0].ItemArray[1].ToString() + " " + group3DataSet.Employee.Rows[0].ItemArray[2].ToString(), group3DataSet.Employee.Rows[0].ItemArray[5].ToString());
+                            string q2 = "select Employee_Role from Employee Where Employee_Id ='" + empID + "'";
+                            SqlCommand cmd1 = new SqlCommand(q2, sqlcon);
+
+                            SqlDataReader emp_role = null;
+                            sqlcon.Open();
+                            emp_role = cmd1.ExecuteReader();
+
+                            while (emp_role.Read())
+                            {
+                                emp_r = emp_role["Employee_Role"].ToString();
+                            }
+
+                            sqlcon.Close();
+                            isManager = false;
+                            StarMeats.ActiveForm.Hide();
+                            StarMeats s = new StarMeats(emp_r);
+                            s.Show();
+                            employeeTableAdapter1.FillEmployee(group3DataSet.Employee, Login.empID);
+                            s.loadUser(group3DataSet.Employee.Rows[0].ItemArray[1].ToString() + " " + group3DataSet.Employee.Rows[0].ItemArray[2].ToString(), group3DataSet.Employee.Rows[0].ItemArray[5].ToString());
+                        }
+                        else
+                            MessageBox.Show("invalid login");
                     }
-                    else
-                        MessageBox.Show("invalid login");
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Connection to database failed");
+                    }
+                    
                 }
             }
         }
@@ -172,7 +188,15 @@ namespace StarMeatsPos
         private void Login_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'group3DataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.group3DataSet.Product);
+            try
+            {
+                this.productTableAdapter.Fill(this.group3DataSet.Product);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connection to database failed");
+            }
+            
 
         }
 

@@ -163,16 +163,25 @@ namespace StarMeatsPos
 
         private void ProcessOrder_Load(object sender, EventArgs e)
         {
-            dataGridView2.ForeColor = Color.Black;
-            dataGridView1.ForeColor = Color.Black;
-            // TODO: This line of code loads data into the 'group3DataSet.Payment' table. You can move, or remove it, as needed.
-            this.paymentTableAdapter.Fill(this.group3DataSet.Payment);
-            // TODO: This line of code loads data into the 'group3DataSet.OrderProduct' table. You can move, or remove it, as needed.
-            //orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
-            dgvOrder.ForeColor = Color.Black;
+            try
+            {
+                dataGridView2.ForeColor = Color.Black;
+                dataGridView1.ForeColor = Color.Black;
+                // TODO: This line of code loads data into the 'group3DataSet.Payment' table. You can move, or remove it, as needed.
+                this.paymentTableAdapter.Fill(this.group3DataSet.Payment);
+                // TODO: This line of code loads data into the 'group3DataSet.OrderProduct' table. You can move, or remove it, as needed.
+                //orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
+                dgvOrder.ForeColor = Color.Black;
+
+                // TODO: This line of code loads data into the 'group3DataSet.Order' table. You can move, or remove it, as needed.
+                this.orderTableAdapter.CompletedOrders(this.group3DataSet.Order);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Database connection failed");
+            }
             
-            // TODO: This line of code loads data into the 'group3DataSet.Order' table. You can move, or remove it, as needed.
-            this.orderTableAdapter.CompletedOrders(this.group3DataSet.Order);
 
         }
 
