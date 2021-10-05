@@ -30,10 +30,17 @@ namespace StarMeatsPos
             }
             else {
                 rtbDisplay.Text = "Orders report from " + FromDatedtp.Value.ToString() + " to " + toDatedtp.Value.ToString();
-                taNumOrders1.FillNumberOrders(starMeatsDataSet1.numOrders, FromDatedtp.Value, toDatedtp.Value);
-                rtbDisplay.Text += "\n\nTotal number of Orders: \n" + starMeatsDataSet1.numOrders.Rows[0].ItemArray[0].ToString();
+                try
+                {
+                    taNumOrders1.FillNumberOrders(starMeatsDataSet1.numOrders, FromDatedtp.Value, toDatedtp.Value);
+                    rtbDisplay.Text += "\n\nTotal number of Orders: \n" + starMeatsDataSet1.numOrders.Rows[0].ItemArray[0].ToString();
 
-                taOrdersReporting1.FillByOrdersTotal(starMeatsDataSet1.OrdersReporting, FromDatedtp.Value, toDatedtp.Value);
+                    taOrdersReporting1.FillByOrdersTotal(starMeatsDataSet1.OrdersReporting, FromDatedtp.Value, toDatedtp.Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connecting to the database");
+                }
                 rtbDisplay.Text += "\n\nTotal Orders Amount: \n ";
                 try
                 {
@@ -43,7 +50,14 @@ namespace StarMeatsPos
                 {
                     rtbDisplay.Text += "There are no sales between the selected time frame";
                 }
-                taOrdersReporting21.FillByMostOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
+                try
+                {
+                    taOrdersReporting21.FillByMostOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connecting to the database");
+                }
                 rtbDisplay.Text += "\n\nMost ordered product: \n";
                 try
                 {
@@ -60,8 +74,14 @@ namespace StarMeatsPos
 
                 rtbDisplay.Refresh();
                 starMeatsDataSet1.Clear();
-                taOrdersReporting21.FillByLeastOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
-
+                try
+                {
+                    taOrdersReporting21.FillByLeastOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connecting to the database");
+                }
                 try
                 {
                     rtbDisplay.Text += "\n\nLeast ordered product: \n";
@@ -90,14 +110,21 @@ namespace StarMeatsPos
             }
             else {
                 rtbDisplay.Text = "Orders report from " + FromDatedtp.Value.ToString() + " to " + toDatedtp.Value.ToString();
-                taNumOrders1.FillNumberOrders(starMeatsDataSet1.numOrders, FromDatedtp.Value, toDatedtp.Value);
-                rtbDisplay.Text += "\n\nTotal number of Orders: \n" + starMeatsDataSet1.numOrders.Rows[0].ItemArray[0].ToString();
+                try
+                {
+                    taNumOrders1.FillNumberOrders(starMeatsDataSet1.numOrders, FromDatedtp.Value, toDatedtp.Value);
+                    rtbDisplay.Text += "\n\nTotal number of Orders: \n" + starMeatsDataSet1.numOrders.Rows[0].ItemArray[0].ToString();
 
-                taOrdersReporting1.FillByOrdersTotal(starMeatsDataSet1.OrdersReporting, FromDatedtp.Value, toDatedtp.Value);
-                rtbDisplay.Text += "\n\nTotal Orders Amount: \n " + "R" + starMeatsDataSet1.OrdersReporting.Rows[0].ItemArray[0].ToString();
+                    taOrdersReporting1.FillByOrdersTotal(starMeatsDataSet1.OrdersReporting, FromDatedtp.Value, toDatedtp.Value);
+                    rtbDisplay.Text += "\n\nTotal Orders Amount: \n " + "R" + starMeatsDataSet1.OrdersReporting.Rows[0].ItemArray[0].ToString();
 
-                taOrdersReporting21.FillByMostOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
-                rtbDisplay.Text += "\n\nMost ordered product: \n";
+                    taOrdersReporting21.FillByMostOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
+                    rtbDisplay.Text += "\n\nMost ordered product: \n";
+                }
+                catch
+                {
+                    MessageBox.Show("Error connecting to the database");
+                }
                 try
                 {
                     rtbDisplay.Text += starMeatsDataSet1.OrdersReporting2.Rows[0].ItemArray[2].ToString();
@@ -113,8 +140,14 @@ namespace StarMeatsPos
 
                 rtbDisplay.Refresh();
                 starMeatsDataSet1.Clear();
-                taOrdersReporting21.FillByLeastOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
-
+                try
+                {
+                    taOrdersReporting21.FillByLeastOrdered(starMeatsDataSet1.OrdersReporting2, FromDatedtp.Value, toDatedtp.Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Error connecting to the database");
+                }
                 try
                 {
                     rtbDisplay.Text += "\n\nLeast ordered product: \n";
