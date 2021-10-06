@@ -155,18 +155,26 @@ namespace StarMeatsPos
         }
 
         private void ProcessSale_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'group3DataSet.OrderProduct' table. You can move, or remove it, as needed.
-            ///this.orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
-            this.orderTableAdapter1.Fill(this.group3DataSet.Order);
-            // TODO: This line of code loads data into the 'starMeatsDataSet.Sale' table. You can move, or remove it, as needed.
-            //this.saleTableAdapter.Fill(this.starMeatsDataSet.Sale);
-            // TODO: This line of code loads data into the 'group3DataSet.SaleProduct' table. You can move, or remove it, as needed.
-            //this.saleProductTableAdapter.Fill(this.group3DataSet.SaleProduct);
-            // TODO: This line of code loads data into the 'group3DataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.group3DataSet.Product);
-            textBoxID.Focus();
 
+        {
+            try
+            {
+                // TODO: This line of code loads data into the 'group3DataSet.OrderProduct' table. You can move, or remove it, as needed.
+                ///this.orderProductTableAdapter.Fill(this.group3DataSet.OrderProduct);
+                this.orderTableAdapter1.Fill(this.group3DataSet.Order);
+                // TODO: This line of code loads data into the 'starMeatsDataSet.Sale' table. You can move, or remove it, as needed.
+                //this.saleTableAdapter.Fill(this.starMeatsDataSet.Sale);
+                // TODO: This line of code loads data into the 'group3DataSet.SaleProduct' table. You can move, or remove it, as needed.
+                //this.saleProductTableAdapter.Fill(this.group3DataSet.SaleProduct);
+                // TODO: This line of code loads data into the 'group3DataSet.Product' table. You can move, or remove it, as needed.
+                this.productTableAdapter.Fill(this.group3DataSet.Product);
+                textBoxID.Focus();
+            }
+            catch
+            {
+                MessageBox.Show("An error has occured. Please try again.");
+                return;
+            }
 
 
 
