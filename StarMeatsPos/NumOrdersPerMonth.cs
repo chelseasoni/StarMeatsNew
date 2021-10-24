@@ -27,6 +27,8 @@ namespace StarMeatsPos
         {
             // TODO: This line of code loads data into the 'starMeatsDataSet1.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.starMeatsDataSet1.Order);
+            webBrowser1.Refresh();
+            webBrowser1.Navigate("https://app.powerbi.com/view?r=eyJrIjoiODZlZjI1NjYtNzcwOS00MGQyLTk2ZDgtNmY2NjkxZDY2NmRmIiwidCI6IjIyNjgyN2Q2LWE5ZDAtNDcwZC04YzE1LWIxNDZiMDE5MmQ1MSIsImMiOjh9");
 
         }
 

@@ -19,37 +19,39 @@ namespace StarMeatsPos
 
         private void ProductReporting_Load(object sender, EventArgs e)
         {
-            crystalReportViewer1.Visible = false;
-            crystalReportViewer2.Visible = false;
+            //crystalReportViewer1.Visible = false;
+           // crystalReportViewer2.Visible = false;
             productTableAdapter1.Fill(group3DataSet1.Product);
             saleProductTableAdapter1.Fill(group3DataSet1.SaleProduct);
             orderProductTableAdapter1.Fill(group3DataSet1.OrderProduct);
             crystalReport22.SetDataSource(group3DataSet1);
             crystalReport41.SetDataSource(group3DataSet1);
+            webBrowser1.Refresh();
+            webBrowser1.Navigate("https://app.powerbi.com/view?r=eyJrIjoiN2VhMDZiNDctODNjMC00NTE3LWIyYjktNjY4NTU0MDYyNDE0IiwidCI6IjIyNjgyN2Q2LWE5ZDAtNDcwZC04YzE1LWIxNDZiMDE5MmQ1MSIsImMiOjh9");
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.Text.Equals("Product Sales Report"))
-            {
-                crystalReportViewer1.Visible = true;
-                crystalReportViewer2.Visible = false;
+       // private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+          //  if (comboBox1.Text.Equals("Product Sales Report"))
+           // {
+            //    crystalReportViewer1.Visible = true;
+            //    crystalReportViewer2.Visible = false;
 
-            }
-            else {
-                crystalReportViewer1.Visible = false;
-                crystalReportViewer2.Visible = true;
-            }
-        }
+          //  }
+          //  else {
+          //      crystalReportViewer1.Visible = false;
+          //      crystalReportViewer2.Visible = true;
+          //  }
+        //}
 
-        private void crystalReport21_InitReport(object sender, EventArgs e)
-        {
+        //private void crystalReport21_InitReport(object sender, EventArgs e)
+        //{
 
-        }
+       // }
 
-        private void crystalReport41_InitReport(object sender, EventArgs e)
-        {
+       // private void crystalReport41_InitReport(object sender, EventArgs e)
+       // {
 
-        }
+       // }
     }
 }

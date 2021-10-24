@@ -30,33 +30,18 @@ namespace StarMeatsPos
         private void InitializeComponent()
         {
             this.crystalReport41 = new StarMeatsPos.CrystalReport4();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.group3DataSet1 = new StarMeatsPos.group3DataSet();
             this.productTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.ProductTableAdapter();
             this.saleProductTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.SaleProductTableAdapter();
             this.orderProductTableAdapter1 = new StarMeatsPos.group3DataSetTableAdapters.OrderProductTableAdapter();
             this.crystalReport22 = new StarMeatsPos.CrystalReport2();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.group3DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReport41
             // 
-            this.crystalReport41.InitReport += new System.EventHandler(this.crystalReport41_InitReport);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Product Sales Report",
-            "Product Order Report"});
-            this.comboBox1.Location = new System.Drawing.Point(13, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "Product Reports";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            //this.crystalReport41.InitReport += new System.EventHandler(this.crystalReport41_InitReport);
             // 
             // group3DataSet1
             // 
@@ -75,27 +60,14 @@ namespace StarMeatsPos
             // 
             this.orderProductTableAdapter1.ClearBeforeFill = true;
             // 
-            // crystalReportViewer1
+            // webBrowser1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(-1, 70);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.crystalReport22;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1109, 612);
-            this.crystalReportViewer1.TabIndex = 2;
-            // 
-            // crystalReportViewer2
-            // 
-            this.crystalReportViewer2.ActiveViewIndex = 0;
-            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer2.Location = new System.Drawing.Point(-1, 70);
-            this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = this.crystalReport41;
-            this.crystalReportViewer2.Size = new System.Drawing.Size(1109, 612);
-            this.crystalReportViewer2.TabIndex = 3;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1104, 682);
+            this.webBrowser1.TabIndex = 0;
             // 
             // ProductReporting
             // 
@@ -103,9 +75,7 @@ namespace StarMeatsPos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1104, 682);
-            this.Controls.Add(this.crystalReportViewer2);
-            this.Controls.Add(this.crystalReportViewer1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.webBrowser1);
             this.Name = "ProductReporting";
             this.Text = "ProductReporting";
             this.Load += new System.EventHandler(this.ProductReporting_Load);
@@ -115,14 +85,12 @@ namespace StarMeatsPos
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
         private group3DataSet group3DataSet1;
         private group3DataSetTableAdapters.ProductTableAdapter productTableAdapter1;
         private group3DataSetTableAdapters.SaleProductTableAdapter saleProductTableAdapter1;
         private CrystalReport2 crystalReport22;
         private CrystalReport4 crystalReport41;
         private group3DataSetTableAdapters.OrderProductTableAdapter orderProductTableAdapter1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
