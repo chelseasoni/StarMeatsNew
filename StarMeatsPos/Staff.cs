@@ -200,141 +200,148 @@ namespace StarMeatsPos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to confirm that this order is complete?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                bool allValidateDetails = true;
-                String test;
-                // test name
-                bool validName = true;
-                test = textBox3.Text;
-                if (String.IsNullOrEmpty(test))
+                if (MessageBox.Show("Are you sure you want to confirm that this order is complete?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    validName = false;
-                    allValidateDetails = false;
-                }
-                for (int i = 0; i < test.Length; i++)
-                {
-                    if (!char.IsLetter(test[i]))
+                    bool allValidateDetails = true;
+                    String test;
+                    // test name
+                    bool validName = true;
+                    test = textBox3.Text;
+                    if (String.IsNullOrEmpty(test))
                     {
                         validName = false;
                         allValidateDetails = false;
                     }
-                }
-                if (!validName)
-                {
-                    MessageBox.Show("Invalid Name");
-                    textBox3.Clear();
-                }
-                // test surname
-                bool validSurname = true;
-                test = textBox2.Text;
-                if (String.IsNullOrEmpty(test))
-                {
-                    validSurname = false;
-                    allValidateDetails = false;
-                }
-                for (int i = 0; i < test.Length; i++)
-                {
-                    if (!char.IsLetter(test[i]))
+                    for (int i = 0; i < test.Length; i++)
+                    {
+                        if (!char.IsLetter(test[i]))
+                        {
+                            validName = false;
+                            allValidateDetails = false;
+                        }
+                    }
+                    if (!validName)
+                    {
+                        MessageBox.Show("Invalid Name");
+                        textBox3.Clear();
+                    }
+                    // test surname
+                    bool validSurname = true;
+                    test = textBox2.Text;
+                    if (String.IsNullOrEmpty(test))
                     {
                         validSurname = false;
                         allValidateDetails = false;
                     }
-                }
-                if (!validSurname)
-                {
-                    MessageBox.Show("Invalid Surname");
-                    textBox2.Clear();
-                }
-                // number
-                bool validCNumber = true;
-                test = textBox5.Text;
-                if (String.IsNullOrEmpty(test) || (test.Length != 10) || (test[0] != '0'))
-                {
-                    validCNumber = false;
-                    allValidateDetails = false;
-                }
-                for (int i = 0; i < test.Length; i++)
-                {
-                    if (!char.IsDigit(test[i]))
+                    for (int i = 0; i < test.Length; i++)
+                    {
+                        if (!char.IsLetter(test[i]))
+                        {
+                            validSurname = false;
+                            allValidateDetails = false;
+                        }
+                    }
+                    if (!validSurname)
+                    {
+                        MessageBox.Show("Invalid Surname");
+                        textBox2.Clear();
+                    }
+                    // number
+                    bool validCNumber = true;
+                    test = textBox5.Text;
+                    if (String.IsNullOrEmpty(test) || (test.Length != 10) || (test[0] != '0'))
                     {
                         validCNumber = false;
                         allValidateDetails = false;
                     }
-                }
-                if (!validCNumber)
-                {
-                    MessageBox.Show("Invalid Number");
-                    textBox5.Clear();
-                }
-                // email
-                bool validEmail = true;
-                test = textBox6.Text;
-                if (String.IsNullOrEmpty(test) || (test.IndexOf('@') < 0))
-                {
-                    validEmail = false;
-                    allValidateDetails = false;
-                }
-                if (!validEmail)
-                {
-                    MessageBox.Show("Invalid E-mail");
-                    textBox6.Clear();
-                }
-                // password
-                bool validPassword = true;
-                test = textBox8.Text;
-                if (String.IsNullOrEmpty(test))
-                {
-                    validPassword = false;
-                    allValidateDetails = false;
-                }
-                if (!validPassword)
-                {
-                    MessageBox.Show("Invalid Password");
-                    textBox8.Clear();
-                }
-                //
-                if (allValidateDetails)
-                {
-                    employeeTableAdapter1.Insert(Convert.ToString(textBox3.Text), Convert.ToString(textBox2.Text), Convert.ToString(textBox5.Text),
-                        Convert.ToString(textBox6.Text), Convert.ToString(textBox4.Text), Convert.ToString(textBox8.Text));
+                    for (int i = 0; i < test.Length; i++)
+                    {
+                        if (!char.IsDigit(test[i]))
+                        {
+                            validCNumber = false;
+                            allValidateDetails = false;
+                        }
+                    }
+                    if (!validCNumber)
+                    {
+                        MessageBox.Show("Invalid Number");
+                        textBox5.Clear();
+                    }
+                    // email
+                    bool validEmail = true;
+                    test = textBox6.Text;
+                    if (String.IsNullOrEmpty(test) || (test.IndexOf('@') < 0))
+                    {
+                        validEmail = false;
+                        allValidateDetails = false;
+                    }
+                    if (!validEmail)
+                    {
+                        MessageBox.Show("Invalid E-mail");
+                        textBox6.Clear();
+                    }
+                    // password
+                    bool validPassword = true;
+                    test = textBox8.Text;
+                    if (String.IsNullOrEmpty(test))
+                    {
+                        validPassword = false;
+                        allValidateDetails = false;
+                    }
+                    if (!validPassword)
+                    {
+                        MessageBox.Show("Invalid Password");
+                        textBox8.Clear();
+                    }
                     //
-                    this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
-                    this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
+                    if (allValidateDetails)
+                    {
+                        employeeTableAdapter1.Insert(Convert.ToString(textBox3.Text), Convert.ToString(textBox2.Text), Convert.ToString(textBox5.Text),
+                            Convert.ToString(textBox6.Text), Convert.ToString(textBox4.Text), Convert.ToString(textBox8.Text));
+                        //
+                        this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+                        this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
+                        label1.Visible = true;
+                        textBox1.Visible = true;
+                        textBox7.Clear();
+                        // textBox7.Visible = false;
+                        textBox8.Clear();
+                        label8.Visible = false;
+                        button1.Enabled = false;
+                        button2.Enabled = true;
+                        button5.Enabled = true;
+                        textBox8.Visible = false;
+                        checkBox1.Visible = true;
+                        MessageBox.Show("Empolyee's details have been saved");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Empolyee's details have not been saved, check entered details");
+                    }
+                }
+                else
+                {
                     label1.Visible = true;
                     textBox1.Visible = true;
-                    textBox7.Clear();
-                    // textBox7.Visible = false;
-                    textBox8.Clear();
+                    //textBox7.Clear();
+                    //textBox7.Visible = false;
                     label8.Visible = false;
                     button1.Enabled = false;
                     button2.Enabled = true;
                     button5.Enabled = true;
                     textBox8.Visible = false;
                     checkBox1.Visible = true;
-                    MessageBox.Show("Empolyee's details have been saved");
-
-                }
-                else
-                {
-                    MessageBox.Show("Empolyee's details have not been saved, check entered details");
+                    this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
+                    MessageBox.Show("Empolyee's new details have been removed");
+                    this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
                 }
             }
-            else
+            catch
             {
-                label1.Visible = true;
-                textBox1.Visible = true;
-                //textBox7.Clear();
-                //textBox7.Visible = false;
-                label8.Visible = false;
-                button1.Enabled = false;
-                button2.Enabled = true;
-                button5.Enabled = true;
-                textBox8.Visible = false;
-                checkBox1.Visible = true;
-                this.employeeTableAdapter1.Fill(this.group3DataSet.Employee);
-                MessageBox.Show("Empolyee's new details have been removed");
-                this.employeeTableAdapter2.Fill(this.dataSet1.Employee);
+                MessageBox.Show("Unsuccesful");
             }
         }
 

@@ -164,104 +164,112 @@ namespace StarMeatsPos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool allValidateDetails = true;
-            String test;
-            // test name
-            bool validName = true;
-            test = textBoxName.Text;
-            if (String.IsNullOrEmpty(test))
+            try
             {
-                validName = false;
-                allValidateDetails = false;
-            }
-            for (int i = 0; i < test.Length; i++)
-            {
-                if (!char.IsLetter(test[i]))
+                bool allValidateDetails = true;
+                String test;
+                // test name
+                bool validName = true;
+                test = textBoxName.Text;
+                if (String.IsNullOrEmpty(test))
                 {
                     validName = false;
                     allValidateDetails = false;
                 }
-            }
-            if (!validName)
-            {
-                MessageBox.Show("Invalid Name");
-                textBoxName.Clear();
-            }
-            // test surname
-            bool validSurname = true;
-            test = textBoxSurname.Text;
-            if (String.IsNullOrEmpty(test))
-            {
-                validSurname = false;
-                allValidateDetails = false;
-            }
-            for (int i = 0; i < test.Length; i++)
-            {
-                if (!char.IsLetter(test[i]))
+                for (int i = 0; i < test.Length; i++)
+                {
+                    if (!char.IsLetter(test[i]))
+                    {
+                        validName = false;
+                        allValidateDetails = false;
+                    }
+                }
+                if (!validName)
+                {
+                    MessageBox.Show("Invalid Name");
+                    textBoxName.Clear();
+                }
+                // test surname
+                bool validSurname = true;
+                test = textBoxSurname.Text;
+                if (String.IsNullOrEmpty(test))
                 {
                     validSurname = false;
                     allValidateDetails = false;
                 }
-            }
-            if (!validSurname)
-            {
-                MessageBox.Show("Invalid Surname");
-                textBoxSurname.Clear();
-            }
-            // number
-            bool validCNumber = true;
-            test = textBoxContact.Text;
-            if (String.IsNullOrEmpty(test) || (test.Length != 10) || (test[0] != '0'))
-            {
-                validCNumber = false;
-                allValidateDetails = false;
-            }
-            for (int i = 0; i < test.Length; i++)
-            {
-                if (!char.IsDigit(test[i]))
+                for (int i = 0; i < test.Length; i++)
+                {
+                    if (!char.IsLetter(test[i]))
+                    {
+                        validSurname = false;
+                        allValidateDetails = false;
+                    }
+                }
+                if (!validSurname)
+                {
+                    MessageBox.Show("Invalid Surname");
+                    textBoxSurname.Clear();
+                }
+                // number
+                bool validCNumber = true;
+                test = textBoxContact.Text;
+                if (String.IsNullOrEmpty(test) || (test.Length != 10) || (test[0] != '0'))
                 {
                     validCNumber = false;
                     allValidateDetails = false;
                 }
+                for (int i = 0; i < test.Length; i++)
+                {
+                    if (!char.IsDigit(test[i]))
+                    {
+                        validCNumber = false;
+                        allValidateDetails = false;
+                    }
+                }
+                if (!validCNumber)
+                {
+                    MessageBox.Show("Invalid Number");
+                    textBoxContact.Clear();
+                }
+                // email
+                bool validEmail = true;
+                test = textBox6.Text;
+                if (String.IsNullOrEmpty(test) || (test.IndexOf('@') < 0))
+                {
+                    validEmail = false;
+                    allValidateDetails = false;
+                }
+                if (!validEmail)
+                {
+                    MessageBox.Show("Invalid E-mail");
+                    textBox6.Clear();
+                }
+                // password
+                /*bool validPassword = true;
+                test = textBoxPassword.Text;
+                if (String.IsNullOrEmpty(test))
+                {
+                    validPassword = false;
+                    allValidateDetails = false;
+                }
+                if (!validPassword)
+                {
+                    MessageBox.Show("Invalid Password");
+                    textBoxPassword.Clear();
+                }
+                */
+                if (allValidateDetails)
+                {
+                    customerTableAdapter1.UpdateQuery(Convert.ToString(textBoxName.Text), Convert.ToString(textBoxSurname.Text),
+                        Convert.ToString(textBox6.Text), Convert.ToString(textBoxContact.Text), Convert.ToString(textBoxPassword.Text),
+                        Convert.ToInt32(textBoxID.Text));
+                    MessageBox.Show("Customer details Updated");
+                    this.customerTableAdapter1.Fill(this.group3DataSet.Customer);
+                }
             }
-            if (!validCNumber)
+            catch (Exception e7)
             {
-                MessageBox.Show("Invalid Number");
-                textBoxContact.Clear();
-            }
-            // email
-            bool validEmail = true;
-            test = textBox6.Text;
-            if (String.IsNullOrEmpty(test) || (test.IndexOf('@') < 0))
-            {
-                validEmail = false;
-                allValidateDetails = false;
-            }
-            if (!validEmail)
-            {
-                MessageBox.Show("Invalid E-mail");
-                textBox6.Clear();
-            }
-            // password
-            /*bool validPassword = true;
-            test = textBoxPassword.Text;
-            if (String.IsNullOrEmpty(test))
-            {
-                validPassword = false;
-                allValidateDetails = false;
-            }
-            if (!validPassword)
-            {
-                MessageBox.Show("Invalid Password");
-                textBoxPassword.Clear();
-            }
-            */
-            if (allValidateDetails) {
-                customerTableAdapter1.UpdateQuery(Convert.ToString(textBoxName.Text), Convert.ToString(textBoxSurname.Text),
-                    Convert.ToString(textBox6.Text), Convert.ToString(textBoxContact.Text), Convert.ToString(textBoxPassword.Text),
-                    Convert.ToInt32(textBoxID.Text));
-                MessageBox.Show("Customer details Updated");
-                this.customerTableAdapter1.Fill(this.group3DataSet.Customer);
+                MessageBox.Show("Update unsucessful");
             }
         }
 
@@ -388,7 +396,7 @@ namespace StarMeatsPos
                 }
             }
             catch {
-                MessageBox.Show("unable to insert");
+                MessageBox.Show("Unable to insert");
             }
         }
 
