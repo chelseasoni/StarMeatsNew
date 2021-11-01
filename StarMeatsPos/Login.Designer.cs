@@ -172,9 +172,9 @@ namespace StarMeatsPos
             this.prodsellbyDataGridViewTextBoxColumn,
             this.reorderlevelDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(746, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 58);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(1122, 150);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
             // 
