@@ -450,7 +450,7 @@ namespace StarMeatsPos
             foreach (DataRow row in group3DataSet.Product.Rows)
             {
                 DataRowView current = (DataRowView)this.productBindingSource.Current;
-                if (current["Prod_Category"].Equals("Butchery Meat") && (Convert.ToInt32(current["Prod_Id"]) != 31) || (Convert.ToInt32(current["Prod_Id"]) == 50))
+                if (current["Prod_Category"].Equals("Butchery Meat") /*&& (Convert.ToInt32(current["Prod_Id"]) != 31) */|| (Convert.ToInt32(current["Prod_Id"]) == 50))
                 {
                     if (Convert.ToDouble(current["Prod_Quantity_Available_kg"]) <= Convert.ToInt32(current["Reorder_level"]))
                     {

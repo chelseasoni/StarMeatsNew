@@ -60,15 +60,15 @@ namespace StarMeatsPos
                         foreach (DataRow row in group3DataSet.Product.Rows)
                         {   
                             DataRowView current = (DataRowView)this.productBindingSource.Current;
-                            //MessageBox.Show(Convert.ToString(current["Prod_Description"]));
-                            if (current["Prod_Category"].Equals("Butchery Meat") && (Convert.ToInt32(current["Prod_Id"]) != 31) || (Convert.ToInt32(current["Prod_Id"]) == 50))
+                            //MessageBox.Show("This is "+Convert.ToString(current["Prod_Description"]));
+                            if (current["Prod_Category"].Equals("Butchery Meat") /*&& (Convert.ToInt32(current["Prod_Id"]) != 31)*/ || (Convert.ToInt32(current["Prod_Id"]) == 50))
                             {
                                 //MessageBox.Show(Convert.ToString(current["Prod_Description"]));
                                 if (Convert.ToDouble(current["Prod_Quantity_Available_kg"]) <= Convert.ToInt32(current["Reorder_level"]))
                                 {
                                     underStockLevel += current["Prod_Description"] + "\r\n";
                                 }
-                                //MessageBox.Show("vewvw");
+                               // MessageBox.Show("vewvw");
                             }
                             else
                             {
@@ -77,7 +77,7 @@ namespace StarMeatsPos
                                     underStockLevel += current["Prod_Description"] + "\r\n";
                                 }
                             }
-                            //MessageBox.Show(Convert.ToString(current["Prod_Description"]));
+                           // MessageBox.Show(Convert.ToString(current["Prod_Description"]));
                             productBindingSource.MoveNext();
                         }
                         StarMeats.ActiveForm.Hide();
