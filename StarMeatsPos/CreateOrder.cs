@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Net.Mail;
-
+using System.Net;
 namespace StarMeatsPos
 {
     public partial class CreateOrder : Form
@@ -539,29 +539,32 @@ namespace StarMeatsPos
                     richTextBox1.Clear();
                     total = 0;
 
-                  
+
 
                     try
                     {
-                        MailMessage mail = new MailMessage();
-                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                        MailMessage msg = new MailMessage();
+                        msg.From = new MailAddress("AsheelDatharam3@gmail.com");
+                        msg.To.Add("asheel.dathz@gmail.com");
+                        msg.Subject = "Star Meats Order Confirmation";
+                        msg.Body = "Order confirmed\nOrder number: " + group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[0] + "\n Order Total: " + String.Format("{0:C}", Convert.ToDecimal(group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[6])) + "\n\n" + str;
 
-                        mail.From = new MailAddress("AsheelDatharam3@gmail.com");
-                        mail.To.Add("chelseasoni@gmail.com"); // replace with your email adress to test
-                        mail.Subject = "Star Meats Order Confirmation";
-                        mail.Body = "Order confirmed\nOrder number: " + group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[0] + "\n Order Total: " + String.Format("{0:C}", Convert.ToDecimal(group3DataSet.Order.Rows[group3DataSet.Order.Rows.Count - 1].ItemArray[6])) +  "\n\n"+ str ;
 
-                        SmtpServer.Port = 587;
-                        SmtpServer.Credentials = new System.Net.NetworkCredential("AsheelDatharam3@gmail.com", "AsheelDatharam123");
-                        SmtpServer.EnableSsl = true;
-
-                        SmtpServer.Send(mail);
+                        SmtpClient smt = new SmtpClient();
+                        smt.Host = "smtp.gmail.com";
+                        System.Net.NetworkCredential ntwd = new NetworkCredential();
+                        ntwd.UserName = "AsheelDatharam3@gmail.com"; //Your Email ID  
+                        ntwd.Password = "starmeats22"; // Your Password  
+                        smt.UseDefaultCredentials = true;
+                        smt.Credentials = ntwd;
+                        smt.Port = 587;
+                        smt.EnableSsl = true;
+                        smt.Send(msg);
                         MessageBox.Show("Email confirmation sent");
-                      
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show("There was a problem sending the email confirmation, confirmation not sent");
+                        MessageBox.Show("Email was not successfully sent!,It seems that our email services are not working at the moment.Please contact us and we will resend your email");
                     }
                 }
             }catch (Exception)
