@@ -28,9 +28,16 @@ namespace StarMeatsPos
 
         private void orderBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.orderBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.starMeatsDataSet);
+            try
+            {
+                this.Validate();
+                this.orderBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.starMeatsDataSet);
+            }
+            catch {
+                MessageBox.Show("Butcher View - Network Related Error.");
+
+            }
 
         }
 
@@ -402,8 +409,14 @@ namespace StarMeatsPos
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataTable2TableAdapter.FillBy(group3DataSet.DataTable2, Convert.ToInt32(order_IdTextBox1.Text));
-            ProductDetails.Text = getProductDescription();
+            try
+            {
+                dataTable2TableAdapter.FillBy(group3DataSet.DataTable2, Convert.ToInt32(order_IdTextBox1.Text));
+                ProductDetails.Text = getProductDescription();
+            }
+            catch {
+                MessageBox.Show("Butcher View - Network Error");
+            }
         }
     }
 }
