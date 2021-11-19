@@ -363,7 +363,7 @@ namespace StarMeatsPos
                             msg.From = new MailAddress("AsheelDatharam3@gmail.com");
                             msg.To.Add("asheel.dathz@gmail.com");
                             msg.Subject = "Star Meats Order Details";
-                            msg.Body = getProductDescription();
+                            msg.Body = "Hi there! Your Star Meats order is ready for pick up!";
                             
 
                             SmtpClient smt = new SmtpClient();
