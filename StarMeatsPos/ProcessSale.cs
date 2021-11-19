@@ -870,7 +870,7 @@ namespace StarMeatsPos
                 this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
             }catch
             {
-                MessageBox.Show("Error unsucessfully cancel")
+                MessageBox.Show("Error unsucessfully cancel");
             }
         }
 
