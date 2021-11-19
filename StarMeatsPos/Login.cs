@@ -60,7 +60,7 @@ namespace StarMeatsPos
                         foreach (DataRow row in group3DataSet.Product.Rows)
                         {   
                             DataRowView current = (DataRowView)this.productBindingSource.Current;
-                            //MessageBox.Show("This is "+Convert.ToString(current["Prod_Description"]));
+                           // MessageBox.Show("This is "+Convert.ToString(current["Prod_Description"]));
                             if (current["Prod_Category"].Equals("Butchery Meat") /*&& (Convert.ToInt32(current["Prod_Id"]) != 31)*/ || (Convert.ToInt32(current["Prod_Id"]) == 50))
                             {
                                 //MessageBox.Show(Convert.ToString(current["Prod_Description"]));

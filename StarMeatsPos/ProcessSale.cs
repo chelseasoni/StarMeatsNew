@@ -860,13 +860,18 @@ namespace StarMeatsPos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataGridViewRow r5 = this.saleGridView.CurrentRow;
-            saleProductTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
-            saleTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
-            MessageBox.Show("Sale successfully cancelled.");
-            this.saleTableAdapter.FillBy(this.starMeatsDataSet.Sale, 0);
-            this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
-
+            try
+            {
+                DataGridViewRow r5 = this.saleGridView.CurrentRow;
+                saleProductTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                saleTableAdapter.DeleteQuery((int)r5.Cells["saleIdDataGridViewTextBoxColumn1"].Value);
+                MessageBox.Show("Sale successfully cancelled.");
+                this.saleTableAdapter.FillBy(this.starMeatsDataSet.Sale, 0);
+                this.saleProductTableAdapter.FillBy(group3DataSet.SaleProduct, 0);
+            }catch
+            {
+                MessageBox.Show("Error unsucessfully cancel")
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
