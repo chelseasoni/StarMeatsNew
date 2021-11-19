@@ -72,57 +72,60 @@ namespace StarMeatsPos
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
-            this.customerBindingSource1.MoveFirst();
+            try
+            {
+                this.customerBindingSource1.MoveFirst();
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
+            }
         }
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            this.customerBindingSource1.MovePrevious();
+            try
+            {
+                this.customerBindingSource1.MovePrevious();
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            this.customerBindingSource1.MoveNext();
+            try
+            {
+                this.customerBindingSource1.MoveNext();
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
+            }
         }
 
         private void buttonLast_Click(object sender, EventArgs e)
         {
-            this.customerBindingSource1.MoveLast();
+            try
+            {
+                this.customerBindingSource1.MoveLast();
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            customerBindingSource1.MoveFirst();
-            Boolean found = false;
-            if (String.IsNullOrEmpty(textBoxCustomerContact.Text) && (String.IsNullOrEmpty(textBoxCustomerSurname.Text)))
+            try
             {
-                foreach (DataRow row in group3DataSet.Customer.Rows)
-                {
-                    DataRowView current = (DataRowView)this.customerBindingSource1.Current;
-                    if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text))
-                    {
-                        found = true;
-                        MessageBox.Show("Found");
-                        break;
-                    }
-                    else
-                    {
-                        customerBindingSource1.MoveNext();
-                    }
-                }
-                if (!found)
-                {
-                    MessageBox.Show("Customer not found");
-                }
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(textBoxCustomerContact.Text))
+                customerBindingSource1.MoveFirst();
+                Boolean found = false;
+                if (String.IsNullOrEmpty(textBoxCustomerContact.Text) && (String.IsNullOrEmpty(textBoxCustomerSurname.Text)))
                 {
                     foreach (DataRow row in group3DataSet.Customer.Rows)
                     {
                         DataRowView current = (DataRowView)this.customerBindingSource1.Current;
-                        if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text) && (Convert.ToString(current["Cust_Surname"]).Equals(textBoxCustomerSurname.Text)))
+                        if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text))
                         {
                             found = true;
                             MessageBox.Show("Found");
@@ -140,25 +143,52 @@ namespace StarMeatsPos
                 }
                 else
                 {
-                    foreach (DataRow row in group3DataSet.Customer.Rows)
+                    if (String.IsNullOrEmpty(textBoxCustomerContact.Text))
                     {
-                        DataRowView current = (DataRowView)this.customerBindingSource1.Current;
-                        if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text) && (Convert.ToString(current["Cust_Surname"]).Equals(textBoxCustomerSurname.Text) && (Convert.ToString(current["Cust_Contact"]).Equals(textBoxCustomerContact.Text))))
+                        foreach (DataRow row in group3DataSet.Customer.Rows)
                         {
-                            found = true;
-                            MessageBox.Show("Found");
-                            break;
+                            DataRowView current = (DataRowView)this.customerBindingSource1.Current;
+                            if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text) && (Convert.ToString(current["Cust_Surname"]).Equals(textBoxCustomerSurname.Text)))
+                            {
+                                found = true;
+                                MessageBox.Show("Found");
+                                break;
+                            }
+                            else
+                            {
+                                customerBindingSource1.MoveNext();
+                            }
                         }
-                        else
+                        if (!found)
                         {
-                            customerBindingSource1.MoveNext();
+                            MessageBox.Show("Customer not found");
                         }
                     }
-                    if (!found)
+                    else
                     {
-                        MessageBox.Show("Customer not found");
+                        foreach (DataRow row in group3DataSet.Customer.Rows)
+                        {
+                            DataRowView current = (DataRowView)this.customerBindingSource1.Current;
+                            if (Convert.ToString(current["Cust_Name"]).Equals(textBoxCustomerName.Text) && (Convert.ToString(current["Cust_Surname"]).Equals(textBoxCustomerSurname.Text) && (Convert.ToString(current["Cust_Contact"]).Equals(textBoxCustomerContact.Text))))
+                            {
+                                found = true;
+                                MessageBox.Show("Found");
+                                break;
+                            }
+                            else
+                            {
+                                customerBindingSource1.MoveNext();
+                            }
+                        }
+                        if (!found)
+                        {
+                            MessageBox.Show("Customer not found");
+                        }
                     }
                 }
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
             }
         }
 
@@ -275,8 +305,14 @@ namespace StarMeatsPos
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            this.customerTableAdapter1.Fill(this.group3DataSet.Customer);
-            MessageBox.Show("Customer details have been reloaded");
+            try
+            {
+                this.customerTableAdapter1.Fill(this.group3DataSet.Customer);
+                MessageBox.Show("Customer details have been reloaded");
+            }
+            catch {
+                MessageBox.Show("Customer Page - Network Error");
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
